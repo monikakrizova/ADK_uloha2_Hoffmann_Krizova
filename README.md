@@ -1,0 +1,1 @@
+# ADK_uloha2_Hoffmann_Krizova
