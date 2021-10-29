@@ -2,6 +2,7 @@
 #include <cmath>
 #include "sortbyy.h"
 #include "sortbyx.h"
+#include <iostream>
 
 #include <QtGui>
 
@@ -53,7 +54,7 @@ QPolygon Algorithms::cHull (std::vector <QPoint> &points)
         //Find next convex hull point
         int i_max = -1;
         double om_max = 0;
-        for (int i = 0; i<points.size(); i++)
+        for (unsigned int i = 0; i<points.size(); i++)
         {
             double om = get2LinesAngle(pj, pjj, pj, points[i]);
 
@@ -82,7 +83,7 @@ std::vector <QPoint> Algorithms::rotate(std::vector <QPoint> &points, double sig
 {
     //Rotate dataset by angle
     std::vector <QPoint> r_points;
-    for (int i = 0; i < points.size(); i++)
+    for (unsigned int i = 0; i < points.size(); i++)
     {
         //Rotate point
         double x_r = points[i].x()*cos(sigma) - points[i].y()*sin(sigma);
@@ -94,6 +95,7 @@ std::vector <QPoint> Algorithms::rotate(std::vector <QPoint> &points, double sig
         //Add point to the list
         r_points.push_back(rp);
     }
+    std::cout << r_points[1].x();
 
     return r_points;
 }
@@ -138,6 +140,7 @@ QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
 
     //Initializing area_min
     auto [mmb, area_min] = minMaxBox(points);
+            std::cout<< "minmaxbox inicializovan " << std::endl;
 
     for (int i=0; i<n; i++)
     {
@@ -161,12 +164,20 @@ QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
              mmb_min = mmb;
          }
      }
+    std::cout<< "vypocet hotov " << std::endl;
+
 
     //Create enclosing rectangle
     std::vector<QPoint> er = rotate(mmb_min, sigma_min);
 
+    std::cout<< "narotovano " << std::endl;
+
+
     //Resize rectangle, preserve area of the building
     std::vector<QPoint> err = resizeRectangle(points,er);
+
+    std::cout<< "resiznuto " << std::endl;
+
 
     //Create QPolygon
     QPolygon er_pol;
@@ -174,6 +185,7 @@ QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
     er_pol.append(err[1]);
     er_pol.append(err[2]);
     er_pol.append(err[3]);
+    std::cout<< "vse ok " << std::endl;
 
     return er_pol;
 }

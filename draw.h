@@ -10,17 +10,20 @@ class Draw : public QWidget
     Q_OBJECT
 private:
     std::vector<QPoint> points;
-    QPolygon ch, er;
+    std::vector <QPolygon> ers, chs;
+    //QPolygon ch;
+    std::vector <QPolygon> buildings;
+    QPoint p;
 
 public:
     explicit Draw(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent *event);
     void mousePressEvent(QMouseEvent *event);
     void clear();
-    std::vector<QPoint> getPoints(){return points;}
-    void setCh(QPolygon &ch_){ch = ch_;}
-    void setEr(QPolygon &er_){er = er_;}
-
+    std::vector<QPolygon> getPolygons(){return buildings;}
+    void setCh(std::vector <QPolygon> &ch_){chs = ch_;}
+    void setEr(std::vector <QPolygon> &er_){ers = er_;}
+    void loadData(QString &file_name);
 
 signals:
 
