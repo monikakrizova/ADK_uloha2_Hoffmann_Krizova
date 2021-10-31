@@ -95,8 +95,6 @@ std::vector <QPoint> Algorithms::rotate(std::vector <QPoint> &points, double sig
         //Add point to the list
         r_points.push_back(rp);
     }
-    std::cout << r_points[1].x();
-
     return r_points;
 }
 
@@ -151,7 +149,7 @@ QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
          double sigma = atan2(dy, dx);
 
          //Rotate by -sigma
-         std::vector<QPoint> r_points = rotate(points, -sigma);
+         std::vector<QPoint> r_points = rotate(points, (-sigma));
 
          //Create min-max box
          auto [mmb, area] = minMaxBox(r_points);
@@ -164,17 +162,17 @@ QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
              mmb_min = mmb;
          }
      }
-    std::cout<< "vypocet hotov " << std::endl;
+    std::cout<< "mmb min " << area_min << ", sigma min: " << sigma_min << std::endl;
 
 
     //Create enclosing rectangle
-    std::vector<QPoint> er = rotate(mmb_min, sigma_min);
+    std::vector<QPoint> eR = rotate(mmb_min, sigma_min);
 
     std::cout<< "narotovano " << std::endl;
 
 
     //Resize rectangle, preserve area of the building
-    std::vector<QPoint> err = resizeRectangle(points,er);
+    std::vector<QPoint> err = resizeRectangle(points,eR);
 
     std::cout<< "resiznuto " << std::endl;
 

@@ -2,8 +2,7 @@
 
 Draw::Draw(QWidget *parent) : QWidget(parent)
 {
-    p.setX(-100);
-    p.setY(-100);
+
 }
 
 void Draw::paintEvent(QPaintEvent *event)
@@ -11,31 +10,18 @@ void Draw::paintEvent(QPaintEvent *event)
     QPainter qp(this);
     qp.begin(this);
 
-    //Draw points
-    //int r=4;
     QPolygon pol;
-    //repaint();
 
-    /*for (int i=0; i<points.size(); i++)
-    {
-        qp.drawEllipse(points[i].x()-r,points[i].y()-r,2*r,2*r);
-        pol.append(points[i]);
-    }*/
-
+    //Draw polygons
     for (unsigned int i = 0; i < buildings.size(); i++)
     {
         qp.drawPolygon(buildings[i]);
     }
 
-    //Draw polygon
-    //qp.setBrush(Qt::yellow);
-    //qp.drawPolygon(pol);
-
     //Draw convex hull
     qp.setBrush(Qt::NoBrush);
     qp.setPen(Qt::red);
-    //qp.drawPolygon(chs);
-    for (int i = 0; i < chs.size(); i++)
+    for (unsigned int i = 0; i < chs.size(); i++)
     {
         qp.drawPolygon(chs[i]);
     }
@@ -43,34 +29,21 @@ void Draw::paintEvent(QPaintEvent *event)
     //Draw enclosing rectangle
     qp.setBrush(Qt::NoBrush);
     qp.setPen(Qt::green);
-    for (int i = 0; i < ers.size(); i++)
+    for (unsigned int i = 0; i < ers.size(); i++)
     {
         qp.drawPolygon(ers[i]);
     }
-
     qp.end();
 }
 
 void Draw::mousePressEvent(QMouseEvent *event)
 {
-    //Get coordinates
-    int x = event->pos().x();
-    int y = event->pos().y();
 
-    //Create point
-    p.setX(x);
-    p.setY(y);
-
-    //Add point to the vector
-    points.push_back(p);
-
-    //Update screen
-    repaint();
 }
 
 void Draw::clear()
 {
-    //points.clear();
+    //Clear canvas
     buildings.clear();
     chs.clear();
     ers.clear();
@@ -100,6 +73,7 @@ void Draw::loadData(QString &file_name)
                     if (polygon.empty() == false)
                         buildings.push_back(polygon);
                     polygon.clear();
+
                     //Add vertice to the end of the QPoint vector
                     vertice.setX(x);
                     vertice.setY(y);

@@ -33,7 +33,7 @@ void Widget::on_pushButton_simplify_clicked()
     std::vector<QPolygon> ers, chs;
     std::vector<QPoint> points;
 
-    if (ui->comboBox->currentIndex()==1)
+    if (ui->comboBox->currentIndex()==1) //Wall average
     {
         for (unsigned int i = 0; i < polygons.size(); i++)
         {
@@ -69,22 +69,23 @@ void Widget::on_pushButton_simplify_clicked()
             }
 
         //Minimum area enclosing rectangle + Convex hull
-        QPolygon ch = a.cHull(points); //ch pak smazat
+        QPolygon ch = a.cHull(points);
         QPolygon er = a.minAreaEnclosingRectangle(points);
 
-        ers.push_back(er);
+        //ers.push_back(er);
         chs.push_back(ch);
 
         }
         ui->Canvas->setEr(ers);
         ui->Canvas->setCh(chs);
 
-    };
+    }
 
     //Update enclosing rectangle
     //ui->Canvas->setEr(er);
 
     //Repaint
+    points.clear();
     repaint();
 }
 
@@ -92,7 +93,7 @@ void Widget::on_pushButton_loadData_clicked()
 {
     QString file_name = "C:/Users/monik/OneDrive/Documents/GitHub/ADK_uloha2/ADK_uloha2/buildings.txt";
     //QString file_name = QFileDialog::getOpenFileName(this, tr("Open Text file"), "", tr("Text Files (*.txt)"));
-    //QFileInfo fileinfo(file_name);
     ui->Canvas->loadData(file_name);
+    repaint();
 }
 
