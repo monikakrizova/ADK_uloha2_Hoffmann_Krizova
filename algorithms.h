@@ -18,6 +18,7 @@ public:
     std::tuple<std::vector<QPoint>, double> minMaxBox(std::vector <QPoint> &points);
     QPolygon minAreaEnclosingRectangle(std::vector <QPoint> &points);
     QPolygon wallAverage(std::vector <QPoint> &points);
+    QPolygon longestEdge(std::vector <QPoint> &points);
     double LH(std::vector <QPoint> &points);
     std::vector <QPoint> resizeRectangle(std::vector <QPoint> &points, std::vector <QPoint> &er);
 

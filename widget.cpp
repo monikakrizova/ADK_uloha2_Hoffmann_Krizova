@@ -45,23 +45,22 @@ void Widget::on_pushButtonSimplify_clicked()
             }
 
         //Minimum area enclosing rectangle + Convex hull
-        QPolygon ch = a.cHull(points); //ch pak smazat
+        //QPolygon ch = a.cHull(points); //ch pak smazat
         QPolygon er = a.wallAverage(points);
 
         ers.push_back(er);
-        chs.push_back(ch);
+        //chs.push_back(ch);
 
         }
         ui->Canvas->setEr(ers);
-        ui->Canvas->setCh(chs);
+        //ui->Canvas->setCh(chs);
 
     }
 
-    else
+    else if (ui->comboBox->currentIndex()==0) //Min area enclosing rectangle
     {
         for (unsigned int i = 0; i < polygons.size(); i++)
         {
-            std::cout << "polygon: " << i+1 << std::endl;
             QPolygon pol = polygons[i];
             points.clear();
             for (int j = 0; j < pol.size(); j++)
@@ -81,7 +80,28 @@ void Widget::on_pushButtonSimplify_clicked()
         ui->Canvas->setCh(chs);
 
     }
+    else if (ui->comboBox->currentIndex()==2) //Longest edge
+    {
+        for (unsigned int i = 0; i < polygons.size(); i++)
+        {
+            QPolygon pol = polygons[i];
+            points.clear();
+            for (int j = 0; j < pol.size(); j++)
+            {
+                points.push_back(pol[j]);
+            }
 
+        //Longest edge
+        //QPolygon ch = a.cHull(points);
+        QPolygon er = a.longestEdge(points);
+
+        ers.push_back(er);
+        //chs.push_back(ch);
+
+        }
+        ui->Canvas->setEr(ers);
+        //ui->Canvas->setCh(chs);
+    }
 
     //Repaint
     points.clear();
@@ -105,6 +125,7 @@ void Widget::on_pushButtonConvexHull_clicked()
 
     //Create enclosing rectangle
     Algorithms a;
+    QPolygon ch;
     std::vector<QPolygon> chs;
     std::vector<QPoint> points;
 
@@ -112,15 +133,18 @@ void Widget::on_pushButtonConvexHull_clicked()
     {
         QPolygon pol = polygons[i];
         points.clear();
+        ch.clear();
         for (int j = 0; j < pol.size(); j++)
         {
             points.push_back(pol[j]);
         }
+        if (ui->comboBoxConvexHull->currentIndex()==0)
+            ch = a.cHull(points);
 
-    //Minimum area enclosing rectangle + Convex hull
-    QPolygon ch = a.qHull(points);
+        else if (ui->comboBoxConvexHull->currentIndex()==1)
+            ch = a.qHull(points);
+
     chs.push_back(ch);
-
     }
     ui->Canvas->setCh(chs);
     repaint();

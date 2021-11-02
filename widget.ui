@@ -71,6 +71,11 @@
          <string>Wall Average</string>
         </property>
        </item>
+       <item>
+        <property name="text">
+         <string>Longest edge</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>
@@ -92,6 +97,36 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Convex hull</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBoxConvexHull">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="maxVisibleItems">
+        <number>13</number>
+       </property>
+       <property name="insertPolicy">
+        <enum>QComboBox::NoInsert</enum>
+       </property>
+       <item>
+        <property name="text">
+         <string>Jarvis scan</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Quick hull</string>
+        </property>
+       </item>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonConvexHull">

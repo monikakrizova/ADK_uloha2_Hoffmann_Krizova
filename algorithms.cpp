@@ -360,6 +360,53 @@ QPolygon Algorithms::wallAverage(std::vector <QPoint> &points)
         return er_pol;
 }
 
+QPolygon Algorithms::longestEdge(std::vector <QPoint> &points)
+{
+    double d_max = 0, sigma, dx, dy;
+    QPolygon pol;
+
+    int n = points.size();
+    for (int i = 0; i < n; i++)
+    {
+        //Compute coords differences and length
+        double dxi = points[(i+1)%n].x() - points[i].x();
+        double dyi = points[(i+1)%n].y() - points[i].y();
+        double lengthi = sqrt(dxi*dxi + dyi*dyi);
+
+        //Check if length [i] is bigger than max legth
+        if (lengthi > d_max)
+        {
+            d_max = lengthi;
+            dx = dxi;
+            dy = dyi;
+        }
+    }
+
+    //Compute direction
+    sigma = atan2(dy,dx);
+
+    std::vector<QPoint> r_points = rotate(points, -sigma);
+
+    //Create min-max box
+    auto [mmb, area] = minMaxBox(r_points);
+
+    //Create enclosing rectangle
+    std::vector<QPoint> er = rotate(mmb, sigma);
+
+    //Resize rectangle, preserve area of the building
+    std::vector<QPoint> err = resizeRectangle(points,er);
+
+    //Create QPolygon
+    QPolygon er_pol;
+    er_pol.append(err[0]);
+    er_pol.append(err[1]);
+    er_pol.append(err[2]);
+    er_pol.append(err[3]);
+
+    return er_pol;
+}
+
+
 
 double Algorithms::LH(std::vector <QPoint> &points)
 {
