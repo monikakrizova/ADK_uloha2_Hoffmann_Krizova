@@ -406,7 +406,75 @@ QPolygon Algorithms::longestEdge(std::vector <QPoint> &points)
     return er_pol;
 }
 
+QPolygon Algorithms::weightedBisector(std::vector <QPoint> &points)
+{
+    double u1_max = 0, u2_max = 0, dx1, dx2, dy1, dy2, sigma1, sigma2;
+    QPolygon pol;
 
+    int n = points.size(); //Number of vertices in polygon
+    int nu = n*(n-3)/2; //Number of diagonals
+
+    for (int i = 0; i < n; i++)
+    {
+        //Compute coord differences and lengths
+        double dxi = points[(i+2)%n].x() - points[i].x();
+        double dyi = points[(i+2)%n].y() - points[i].y();
+        double lengthi = sqrt(dxi*dxi + dyi*dyi);
+
+        if (lengthi > u1_max)
+        {
+            u1_max = lengthi;
+            std::cout << "u1_max: " << u1_max << std::endl;
+            dx1 = dxi;
+            dy1 = dyi;
+        }
+
+        std::cout << "i: " << i << std::endl;
+        std::cout << "i+2: " << (i+2)%n << std::endl;
+
+
+        for (int j = 0; j < n-4; j++)
+        {
+            std::cout << "i: " << i << std::endl;
+            std::cout << "i+j+3: " << (i+j+3)%n << std::endl;
+            double dxi = points[(i+j+3)%n].x() - points[i].x();
+            double dyi = points[(i+j+3)%n].y() - points[i].y();
+            double lengthi = sqrt(dxi*dxi + dyi*dyi);
+
+            //Check if length [i] is bigger than max legth of diagonal
+            if (lengthi > u1_max)
+            {
+                u1_max = lengthi;
+                std::cout << "u1_max: " << u1_max << std::endl;
+                dx1 = dxi;
+                dy1 = dyi;
+            }
+        }
+    }
+
+    //Compute direction
+    sigma1 = atan2(dy1,dx1);
+
+    std::vector<QPoint> r_points = rotate(points, -sigma1);
+
+    //Create min-max box
+    auto [mmb, area] = minMaxBox(r_points);
+
+    //Create enclosing rectangle
+    std::vector<QPoint> er = rotate(mmb, sigma1);
+
+    //Resize rectangle, preserve area of the building
+    std::vector<QPoint> err = resizeRectangle(points,er);
+
+    //Create QPolygon
+    QPolygon er_pol;
+    er_pol.append(err[0]);
+    er_pol.append(err[1]);
+    er_pol.append(err[2]);
+    er_pol.append(err[3]);
+
+    return er_pol;
+}
 
 double Algorithms::LH(std::vector <QPoint> &points)
 {

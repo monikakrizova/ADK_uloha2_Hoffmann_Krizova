@@ -76,6 +76,11 @@
          <string>Longest edge</string>
         </property>
        </item>
+       <item>
+        <property name="text">
+         <string>Weighted Bisector</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>

@@ -102,6 +102,28 @@ void Widget::on_pushButtonSimplify_clicked()
         ui->Canvas->setEr(ers);
         //ui->Canvas->setCh(chs);
     }
+    else if (ui->comboBox->currentIndex()==3) //Weighted Bisector
+    {
+        for (unsigned int i = 0; i < polygons.size(); i++)
+        {
+            QPolygon pol = polygons[i];
+            points.clear();
+            for (int j = 0; j < pol.size(); j++)
+            {
+                points.push_back(pol[j]);
+            }
+
+        //Longest edge
+        //QPolygon ch = a.cHull(points);
+        QPolygon er = a.weightedBisector(points);
+
+        ers.push_back(er);
+        //chs.push_back(ch);
+
+        }
+        ui->Canvas->setEr(ers);
+        //ui->Canvas->setCh(chs);
+    }
 
     //Repaint
     points.clear();
@@ -110,7 +132,7 @@ void Widget::on_pushButtonSimplify_clicked()
 
 void Widget::on_pushButtonLoadData_clicked()
 {
-    QString file_name = "C:/Users/monik/OneDrive/Documents/GitHub/ADK_uloha2/buildings.txt";
+    QString file_name = "D:/Github/ADK/ADKI_uloha1/polygon1.txt";
     //QString file_name = "C:/Users/monik/Documents/SKOLA/Ing_3.semestr/ADK/exported_pols/buildings_SJTSK.txt";
     //QString file_name = QFileDialog::getOpenFileName(this, tr("Open Text file"), "", tr("Text Files (*.txt)"));
     ui->Canvas->loadData(file_name);
