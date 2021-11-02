@@ -408,7 +408,7 @@ QPolygon Algorithms::longestEdge(std::vector <QPoint> &points)
 
 QPolygon Algorithms::weightedBisector(std::vector <QPoint> &points)
 {
-    double u1_max = 0, u2_max = 0, dx1, dx2, dy1, dy2, sigma1, sigma2;
+    double u1_max = 0, u2_max = 0, dx1 = 0, dx2 = 0, dy1 = 0, dy2 = 0, sigma1, sigma2, sigma;
     QPolygon pol;
 
     int n = points.size(); //Number of vertices in polygon
@@ -421,10 +421,13 @@ QPolygon Algorithms::weightedBisector(std::vector <QPoint> &points)
         double dyi = points[(i+2)%n].y() - points[i].y();
         double lengthi = sqrt(dxi*dxi + dyi*dyi);
 
-        if (lengthi > u1_max)
+        if (lengthi >= u1_max)
         {
+            u2_max = u1_max;
             u1_max = lengthi;
             std::cout << "u1_max: " << u1_max << std::endl;
+            dx2 = dx1;
+            dy2 = dy1;
             dx1 = dxi;
             dy1 = dyi;
         }
@@ -442,10 +445,13 @@ QPolygon Algorithms::weightedBisector(std::vector <QPoint> &points)
             double lengthi = sqrt(dxi*dxi + dyi*dyi);
 
             //Check if length [i] is bigger than max legth of diagonal
-            if (lengthi > u1_max)
+            if (lengthi >= u1_max)
             {
+                u2_max = u1_max;
                 u1_max = lengthi;
                 std::cout << "u1_max: " << u1_max << std::endl;
+                dx2 = dx1;
+                dy2 = dy1;
                 dx1 = dxi;
                 dy1 = dyi;
             }
@@ -454,14 +460,28 @@ QPolygon Algorithms::weightedBisector(std::vector <QPoint> &points)
 
     //Compute direction
     sigma1 = atan2(dy1,dx1);
+    std::cout << "dx1: " << dx1 << std::endl;
+    std::cout << "dy1: " << dy1 << std::endl;
+    std::cout << "sigma1: " << sigma1 << std::endl;
+    std::cout << "u1_max: " << u1_max << std::endl;
+    sigma2 = atan2(dy2,dx2);
+    std::cout << "dx2: " << dx2 << std::endl;
+    std::cout << "dy2: " << dy2 << std::endl;
+    std::cout << "sigma2: " << sigma2 << std::endl;
+    std::cout << "u2_max: " << u2_max << std::endl;
+    sigma = (sigma1*u1_max + sigma2*u2_max)/(u1_max+u2_max);
+    /*if (sigma < 0)
+        sigma += 2*M_PI;*/
 
-    std::vector<QPoint> r_points = rotate(points, -sigma1);
+    std::cout << "sigma: " << sigma << std::endl;
+
+    std::vector<QPoint> r_points = rotate(points, -sigma);
 
     //Create min-max box
     auto [mmb, area] = minMaxBox(r_points);
 
     //Create enclosing rectangle
-    std::vector<QPoint> er = rotate(mmb, sigma1);
+    std::vector<QPoint> er = rotate(mmb, sigma);
 
     //Resize rectangle, preserve area of the building
     std::vector<QPoint> err = resizeRectangle(points,er);
