@@ -91,7 +91,6 @@ void Widget::on_pushButtonSimplify_clicked()
                 points.push_back(pol[j]);
             }
 
-        //Longest edge
         //QPolygon ch = a.cHull(points);
         QPolygon er = a.longestEdge(points);
 
@@ -113,7 +112,6 @@ void Widget::on_pushButtonSimplify_clicked()
                 points.push_back(pol[j]);
             }
 
-        //Longest edge
         //QPolygon ch = a.cHull(points);
         QPolygon er = a.weightedBisector(points);
 
@@ -132,9 +130,8 @@ void Widget::on_pushButtonSimplify_clicked()
 
 void Widget::on_pushButtonLoadData_clicked()
 {
-    QString file_name = "D:/Github/ADK/ADKI_uloha1/polygon1.txt";
-    //QString file_name = "C:/Users/monik/Documents/SKOLA/Ing_3.semestr/ADK/exported_pols/buildings_SJTSK.txt";
-    //QString file_name = QFileDialog::getOpenFileName(this, tr("Open Text file"), "", tr("Text Files (*.txt)"));
+    //Open text file with dialog
+    QString file_name = QFileDialog::getOpenFileName(this, tr("Open Text file"), "", tr("Text Files (*.txt)"));
     ui->Canvas->loadData(file_name);
     repaint();
 }
@@ -160,10 +157,10 @@ void Widget::on_pushButtonConvexHull_clicked()
         {
             points.push_back(pol[j]);
         }
-        if (ui->comboBoxConvexHull->currentIndex()==0)
+        if (ui->comboBoxConvexHull->currentIndex()==0) //Convex hull
             ch = a.cHull(points);
 
-        else if (ui->comboBoxConvexHull->currentIndex()==1)
+        else if (ui->comboBoxConvexHull->currentIndex()==1) //Quick hull
             ch = a.qHull(points);
 
     chs.push_back(ch);
