@@ -77,7 +77,7 @@ double Algorithms::getPointLineDistance(QPoint &a, QPoint &p1, QPoint &p2)
 
 QPolygon Algorithms::cHull (std::vector <QPoint> &points)
 {
-    //Create convex hull, Jarvis scan
+     //Create convex hull, Jarvis scan
      QPolygon ch;
 
      //Find pivot
@@ -162,7 +162,7 @@ void Algorithms::qHullRecursive(int r, int s, std::vector<QPoint> &points, QPoly
     double d_max = 0;
     int i_max = -99;
 
-    for (int i = 2; i < points.size(); i++)
+    for (int unsigned i = 2; i < points.size(); i++)
     {
         int result = getPointLinePosition(points[i],points[r],points[s]);
 
@@ -186,13 +186,12 @@ void Algorithms::qHullRecursive(int r, int s, std::vector<QPoint> &points, QPoly
     }
 }
 
-
 std::vector <QPoint> Algorithms::rotate(std::vector <QPoint> &points, double sigma)
 {
     //Rotate dataset by angle
     std::vector <QPoint> r_points;
 
-    for (int i = 0; i < points.size(); i++)
+    for (int unsigned i = 0; i < points.size(); i++)
     {
         //Rotate point
         double x_r = points[i].x()*cos(sigma) - points[i].y()*sin(sigma);
@@ -208,7 +207,6 @@ std::vector <QPoint> Algorithms::rotate(std::vector <QPoint> &points, double sig
 
     return r_points;
 }
-
 
 std::tuple<std::vector<QPoint>, double> Algorithms::minMaxBox(std::vector <QPoint> &points)
 {
@@ -236,7 +234,6 @@ std::tuple<std::vector<QPoint>, double> Algorithms::minMaxBox(std::vector <QPoin
     return {mmb, area};
 }
 
-
 QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
 {
     //Create minimum area enclosing rectangle
@@ -252,7 +249,7 @@ QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
     //Initializing area_min
     auto [mmb, area_min] = minMaxBox(points);
 
-    for (int j=0; j<n; j++)
+    for (int j = 0; j < n; j++)
     {
          //Coordinate differences
          double dx = ch[(j+1)%n].x() - ch[j].x();
@@ -292,7 +289,6 @@ QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
 
     return er_pol;
 }
-
 
 QPolygon Algorithms::wallAverage(std::vector <QPoint> &points)
 {
@@ -477,7 +473,6 @@ double Algorithms::LH(std::vector <QPoint> &points)
     //Return unsigned area
     return 0.5 * fabs(area);
 }
-
 
 std::vector <QPoint> Algorithms::resizeRectangle(std::vector <QPoint> &points, std::vector <QPoint> &er)
 {

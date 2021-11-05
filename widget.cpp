@@ -23,7 +23,6 @@ void Widget::on_pushButtonClear_clicked()
 }
 
 void Widget::on_pushButtonSimplify_clicked()
-
 {
     //Get pols
     std::vector<QPolygon> polygons = ui->Canvas->getPolygons();
@@ -44,17 +43,11 @@ void Widget::on_pushButtonSimplify_clicked()
                 points.push_back(pol[j]);
             }
 
-        //Minimum area enclosing rectangle + Convex hull
-        //QPolygon ch = a.cHull(points); //ch pak smazat
-        QPolygon er = a.wallAverage(points);
-
-        ers.push_back(er);
-        //chs.push_back(ch);
+            QPolygon er = a.wallAverage(points);
+            ers.push_back(er);
 
         }
         ui->Canvas->setEr(ers);
-        //ui->Canvas->setCh(chs);
-
     }
 
     else if (ui->comboBox->currentIndex()==0) //Min area enclosing rectangle
@@ -68,17 +61,11 @@ void Widget::on_pushButtonSimplify_clicked()
                 points.push_back(pol[j]);
             }
 
-        //Minimum area enclosing rectangle + Convex hull
-        QPolygon ch = a.cHull(points);
-        QPolygon er = a.minAreaEnclosingRectangle(points);
-
-        ers.push_back(er);
-        chs.push_back(ch);
+            QPolygon er = a.minAreaEnclosingRectangle(points);
+            ers.push_back(er);
 
         }
         ui->Canvas->setEr(ers);
-        ui->Canvas->setCh(chs);
-
     }
     else if (ui->comboBox->currentIndex()==2) //Longest edge
     {
@@ -91,15 +78,11 @@ void Widget::on_pushButtonSimplify_clicked()
                 points.push_back(pol[j]);
             }
 
-        //QPolygon ch = a.cHull(points);
-        QPolygon er = a.longestEdge(points);
-
-        ers.push_back(er);
-        //chs.push_back(ch);
+            QPolygon er = a.longestEdge(points);
+            ers.push_back(er);
 
         }
         ui->Canvas->setEr(ers);
-        //ui->Canvas->setCh(chs);
     }
     else if (ui->comboBox->currentIndex()==3) //Weighted Bisector
     {
@@ -112,15 +95,11 @@ void Widget::on_pushButtonSimplify_clicked()
                 points.push_back(pol[j]);
             }
 
-        //QPolygon ch = a.cHull(points);
-        QPolygon er = a.weightedBisector(points);
-
-        ers.push_back(er);
-        //chs.push_back(ch);
+            QPolygon er = a.weightedBisector(points);
+            ers.push_back(er);
 
         }
         ui->Canvas->setEr(ers);
-        //ui->Canvas->setCh(chs);
     }
 
     //Repaint
@@ -163,7 +142,7 @@ void Widget::on_pushButtonConvexHull_clicked()
         else if (ui->comboBoxConvexHull->currentIndex()==1) //Quick hull
             ch = a.qHull(points);
 
-    chs.push_back(ch);
+        chs.push_back(ch);
     }
     ui->Canvas->setCh(chs);
     repaint();
