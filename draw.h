@@ -16,8 +16,8 @@ private:
     //QPolygon ch;
     std::vector <QPolygon> buildings;
     QPoint p;
-    //long long y_min = 999999999999, x_min = -999999999999;
-    //long long y_min = 999999999999, x_max = -999999999999;
+    double y_max = 0, x_min = 999999999; //pro transformaci
+    double y_min = 999999999, x_max = 0; //pro meritko
 
 
 public:
