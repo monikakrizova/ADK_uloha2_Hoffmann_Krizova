@@ -71,8 +71,10 @@ void Draw::loadData(QString &file_name)
         {
             QString line = in.readLine();
             int id = line.split(" ")[0].toInt();
-            double x = line.split(" ")[1].toDouble();
-            double y = line.split(" ")[2].toDouble();
+            double y = line.split(" ")[1].toDouble();
+            double x = line.split(" ")[2].toDouble();
+
+            std::cout << "y: "<< y << std::endl;
 
             if (id == 1)
             {
@@ -107,11 +109,11 @@ void Draw::loadData(QString &file_name)
 
             if (yy > y_max)
                 y_max = yy;
-            else if (xx < x_min)
+            if (xx < x_min)
                 x_min = xx;
-            else if (yy_ < y_min)
+            if (yy_ < y_min)
                 y_min = yy_;
-            else if (xx_ > x_max)
+            if (xx_ > x_max)
                 x_max = xx_;
         }
 
@@ -121,8 +123,25 @@ void Draw::loadData(QString &file_name)
     //Compute scales to zoom in in canvas
     double canvas_weight = 952.0;
     double canvas_height = 748.0;
-    double k_w = canvas_weight/fabs(y_max-y_min);
-    double k_h = canvas_height/fabs(x_max-x_min);
+
+    double dy = fabs(y_max-y_min);
+    double dx = fabs(x_max-x_min);
+
+    double k;
+    if (dy > dx)
+        k = canvas_weight/dy;
+    else
+        k = canvas_height/dx;
+
+    /*double k_w = canvas_weight/fabs(x_max-x_min);
+    double k_h = canvas_height/fabs(y_max-y_min);
+    double k = (k_w + k_h)/2;*/
+
+    /*std::cout << "k: "<< k << std::endl;
+    std::cout << "x_max: "<< x_max << std::endl;
+    std::cout << "y_min: "<< y_min << std::endl;
+    std::cout << "dy: "<< fabs(y_max-y_min) << std::endl;
+    std::cout << "dx: "<< fabs(x_max-x_min) << std::endl;*/
 
     //Trosform coordinates from JTSK to canvas
     for (int unsigned i = 0; i < buildings_.size(); i++)
@@ -130,9 +149,13 @@ void Draw::loadData(QString &file_name)
         QPolygon pol = buildings_[i];
         for (int j = 0; j < pol.size(); j++)
         {
+            //std::cout << "y: "<< pol[j].y() << "x: "<< pol[j].x() << std::endl;
             double temp = pol[j].x();
-            pol[j].setX(-k_w*(pol[j].y()-y_max));
-            pol[j].setY(k_h*(temp-x_min));
+            pol[j].setX(-k*(pol[j].y()-y_max));
+            pol[j].setY(k*(temp-x_min));
+
+            /*std::cout << "x: "<< pol[j].x() << std::endl;
+            std::cout << "y: "<< pol[j].y() << std::endl;*/
         }
 
         buildings.push_back(pol);
