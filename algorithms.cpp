@@ -11,7 +11,7 @@ Algorithms::Algorithms()
 
 }
 
-double Algorithms::get2LinesAngle(QPoint &p1, QPoint &p2, QPoint &p3, QPoint &p4)
+double Algorithms::get2LinesAngle(QPointF &p1, QPointF &p2, QPointF &p3, QPointF &p4)
 {
     //Compute angle formed by two lines
 
@@ -33,7 +33,7 @@ double Algorithms::get2LinesAngle(QPoint &p1, QPoint &p2, QPoint &p3, QPoint &p4
     return fabs(acos(dp/(nu*nv)));
 }
 
-int Algorithms::getPointLinePosition(QPoint &a,QPoint &p1,QPoint &p2)
+int Algorithms::getPointLinePosition(QPointF &a,QPointF &p1,QPointF &p2)
 {
     //Analyze point and line position
     double eps = 1.0e-10;
@@ -60,7 +60,7 @@ int Algorithms::getPointLinePosition(QPoint &a,QPoint &p1,QPoint &p2)
     return -1;
 }
 
-double Algorithms::getPointLineDistance(QPoint &a, QPoint &p1, QPoint &p2)
+double Algorithms::getPointLineDistance(QPointF &a, QPointF &p1, QPointF &p2)
 {
     //Compute distance between line and point
     double up = fabs(a.x()*(p1.y() - p2.y()) + p1.x()*(p2.y() - a.y()) + p2.x()*(a.y() - p1.y()));
@@ -75,20 +75,20 @@ double Algorithms::getPointLineDistance(QPoint &a, QPoint &p1, QPoint &p2)
 
 
 
-QPolygon Algorithms::cHull (std::vector <QPoint> &points)
+QPolygonF Algorithms::cHull (std::vector <QPointF> &points)
 {
      //Create convex hull, Jarvis scan
-     QPolygon ch;
+     QPolygonF ch;
 
      //Find pivot
-     QPoint q=*std::min_element(points.begin(), points.end(), sortByY());
+     QPointF q=*std::min_element(points.begin(), points.end(), sortByY());
 
      //Add pivot to convex hull
      ch.append(q);
 
      //Create pj, pjj
-     QPoint pj = q;
-     QPoint pjj(0,q.y());
+     QPointF pj = q;
+     QPointF pjj(0,q.y());
 
      do
      {
@@ -119,19 +119,19 @@ QPolygon Algorithms::cHull (std::vector <QPoint> &points)
      return ch;
 }
 
-QPolygon Algorithms::qHull (std::vector <QPoint> &points)
+QPolygonF Algorithms::qHull (std::vector <QPointF> &points)
 {
     //Create quick hull
-    QPolygon qh;
-    std::vector<QPoint> su;
-    std::vector<QPoint> sl;
+    QPolygonF qh;
+    std::vector<QPointF> su;
+    std::vector<QPointF> sl;
 
     //Sort points
     std::sort(points.begin(), points.end(), sortByY());
 
     //Create pivots
-    QPoint q1 = points[0];
-    QPoint q3 = points.back();
+    QPointF q1 = points[0];
+    QPointF q3 = points.back();
 
     //Add pivots to SU and SL
     su.push_back(q1);
@@ -157,7 +157,7 @@ QPolygon Algorithms::qHull (std::vector <QPoint> &points)
     return qh;
 }
 
-void Algorithms::qHullRecursive(int r, int s, std::vector<QPoint> &points, QPolygon &ch)
+void Algorithms::qHullRecursive(int r, int s, std::vector<QPointF> &points, QPolygonF &ch)
 {
     double d_max = 0;
     int i_max = -99;
@@ -186,10 +186,10 @@ void Algorithms::qHullRecursive(int r, int s, std::vector<QPoint> &points, QPoly
     }
 }
 
-std::vector <QPoint> Algorithms::rotate(std::vector <QPoint> &points, double sigma)
+std::vector <QPointF> Algorithms::rotate(std::vector <QPointF> &points, double sigma)
 {
     //Rotate dataset by angle
-    std::vector <QPoint> r_points;
+    std::vector <QPointF> r_points;
 
     for (int unsigned i = 0; i < points.size(); i++)
     {
@@ -198,7 +198,7 @@ std::vector <QPoint> Algorithms::rotate(std::vector <QPoint> &points, double sig
         double y_r = points[i].x()*sin(sigma) + points[i].y()*cos(sigma);
 
         // Create point
-        QPoint rp(x_r, y_r);
+        QPointF rp(x_r, y_r);
 
         //Add point to the list
         r_points.push_back(rp);
@@ -208,25 +208,25 @@ std::vector <QPoint> Algorithms::rotate(std::vector <QPoint> &points, double sig
     return r_points;
 }
 
-std::tuple<std::vector<QPoint>, double> Algorithms::minMaxBox(std::vector <QPoint> &points)
+std::tuple<std::vector<QPointF>, double> Algorithms::minMaxBox(std::vector <QPointF> &points)
 {
     //Return vertices of min-max box and its area
     double area = 0;
 
     //Return vertices with extreme coordinates
-    QPoint pxmin = *std::min_element(points.begin(), points.end(), sortByX());
-    QPoint pxmax = *std::max_element(points.begin(), points.end(), sortByX());
-    QPoint pymin = *std::min_element(points.begin(), points.end(), sortByY());
-    QPoint pymax = *std::max_element(points.begin(), points.end(), sortByY());
+    QPointF pxmin = *std::min_element(points.begin(), points.end(), sortByX());
+    QPointF pxmax = *std::max_element(points.begin(), points.end(), sortByX());
+    QPointF pymin = *std::min_element(points.begin(), points.end(), sortByY());
+    QPointF pymax = *std::max_element(points.begin(), points.end(), sortByY());
 
     //Create min-max box vertices
-    QPoint v1(pxmin.x(),pymin.y());
-    QPoint v2(pxmax.x(),pymin.y());
-    QPoint v3(pxmax.x(),pymax.y());
-    QPoint v4(pxmin.x(),pymax.y());
+    QPointF v1(pxmin.x(),pymin.y());
+    QPointF v2(pxmax.x(),pymin.y());
+    QPointF v3(pxmax.x(),pymax.y());
+    QPointF v4(pxmin.x(),pymax.y());
 
     //Create min-max box polygon
-    std::vector<QPoint> mmb{v1,v2,v3,v4};
+    std::vector<QPointF> mmb{v1,v2,v3,v4};
 
     //Calculate min-max box area
     area = (pxmax.x() - pxmin.x())*(pymax.y() - pymin.y());
@@ -234,17 +234,17 @@ std::tuple<std::vector<QPoint>, double> Algorithms::minMaxBox(std::vector <QPoin
     return {mmb, area};
 }
 
-QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
+QPolygonF Algorithms::minAreaEnclosingRectangle(std::vector <QPointF> &points)
 {
     //Create minimum area enclosing rectangle
-    QPolygon ch = cHull(points);
-    std::vector<QPoint> er;
+    QPolygonF ch = cHull(points);
+    std::vector<QPointF> er;
     er.clear();
 
     //Searching for min max box with min area
     int n = ch.size();
     double sigma_min=0;
-    std::vector<QPoint> mmb_min;
+    std::vector<QPointF> mmb_min;
 
     //Initializing area_min
     auto [mmb, area_min] = minMaxBox(points);
@@ -258,7 +258,7 @@ QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
          double sigma = atan2(dy, dx);
 
          //Rotate by -sigma
-         std::vector<QPoint> r_points = rotate(points, -sigma);
+         std::vector<QPointF> r_points = rotate(points, -sigma);
 
          //Create min-max box
          auto [mmb, area] = minMaxBox(r_points);
@@ -278,10 +278,10 @@ QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
     std::cout << er.size() << std::endl;
 
     //Resize rectangle, preserve area of the building
-    std::vector<QPoint> err = resizeRectangle(points,er);
+    std::vector<QPointF> err = resizeRectangle(points,er);
 
-    //Create QPolygon
-    QPolygon er_pol;
+    //Create QPolygonF
+    QPolygonF er_pol;
     er_pol.append(err[0]);
     er_pol.append(err[1]);
     er_pol.append(err[2]);
@@ -290,11 +290,11 @@ QPolygon Algorithms::minAreaEnclosingRectangle(std::vector <QPoint> &points)
     return er_pol;
 }
 
-QPolygon Algorithms::wallAverage(std::vector <QPoint> &points)
+QPolygonF Algorithms::wallAverage(std::vector <QPointF> &points)
 {
     //Create enclosing rectangle using wall average method
     double sigma = 0, si_sum = 0;
-    QPolygon pol;
+    QPolygonF pol;
 
     //Compute initial direction
     double dx = points[1].x() - points[0].x();
@@ -331,19 +331,19 @@ QPolygon Algorithms::wallAverage(std::vector <QPoint> &points)
     sigma = sigma_ + sigma/si_sum;
 
     //Rotate by -sigma
-    std::vector<QPoint> r_points = rotate(points, -sigma);
+    std::vector<QPointF> r_points = rotate(points, -sigma);
 
     //Create min-max box
     auto [mmb, area] = minMaxBox(r_points);
 
     //Create enclosing rectangle
-    std::vector<QPoint> er = rotate(mmb, sigma);
+    std::vector<QPointF> er = rotate(mmb, sigma);
 
     //Resize rectangle, preserve area of the building
-    std::vector<QPoint> err = resizeRectangle(points,er);
+    std::vector<QPointF> err = resizeRectangle(points,er);
 
-    //Create QPolygon
-    QPolygon er_pol;
+    //Create QPolygonF
+    QPolygonF er_pol;
     er_pol.append(err[0]);
     er_pol.append(err[1]);
     er_pol.append(err[2]);
@@ -352,11 +352,11 @@ QPolygon Algorithms::wallAverage(std::vector <QPoint> &points)
     return er_pol;
 }
 
-QPolygon Algorithms::longestEdge(std::vector <QPoint> &points)
+QPolygonF Algorithms::longestEdge(std::vector <QPointF> &points)
 {
     //Create enclosing rectangle using longest edge method
     double d_max = 0, sigma, dx, dy;
-    QPolygon pol;
+    QPolygonF pol;
 
     int n = points.size();
     for (int i = 0; i < n; i++)
@@ -379,19 +379,19 @@ QPolygon Algorithms::longestEdge(std::vector <QPoint> &points)
     sigma = atan2(dy,dx);
 
     //Rotate by -sigma
-    std::vector<QPoint> r_points = rotate(points, -sigma);
+    std::vector<QPointF> r_points = rotate(points, -sigma);
 
     //Create min-max box
     auto [mmb, area] = minMaxBox(r_points);
 
     //Create enclosing rectangle
-    std::vector<QPoint> er = rotate(mmb, sigma);
+    std::vector<QPointF> er = rotate(mmb, sigma);
 
     //Resize rectangle, preserve area of the building
-    std::vector<QPoint> err = resizeRectangle(points,er);
+    std::vector<QPointF> err = resizeRectangle(points,er);
 
-    //Create QPolygon
-    QPolygon er_pol;
+    //Create QPolygonF
+    QPolygonF er_pol;
     er_pol.append(err[0]);
     er_pol.append(err[1]);
     er_pol.append(err[2]);
@@ -400,11 +400,11 @@ QPolygon Algorithms::longestEdge(std::vector <QPoint> &points)
     return er_pol;
 }
 
-QPolygon Algorithms::weightedBisector(std::vector <QPoint> &points)
+QPolygonF Algorithms::weightedBisector(std::vector <QPointF> &points)
 {
     //Create enclosing rectangle using weighted bisector method
     double u1_max = 0, u2_max = 0, dx1 = 0, dx2, dy1 = 0, dy2, sigma1, sigma2, sigma;
-    QPolygon pol;
+    QPolygonF pol;
 
     int n = points.size(); //Number of vertices in polygon
 
@@ -437,19 +437,19 @@ QPolygon Algorithms::weightedBisector(std::vector <QPoint> &points)
     sigma = (sigma1*u1_max + sigma2*u2_max)/(u1_max+u2_max);
 
     //Rotate by -sigma
-    std::vector<QPoint> r_points = rotate(points, -sigma);
+    std::vector<QPointF> r_points = rotate(points, -sigma);
 
     //Create min-max box
     auto [mmb, area] = minMaxBox(r_points);
 
     //Create enclosing rectangle
-    std::vector<QPoint> er = rotate(mmb, sigma);
+    std::vector<QPointF> er = rotate(mmb, sigma);
 
     //Resize rectangle, preserve area of the building
-    std::vector<QPoint> err = resizeRectangle(points,er);
+    std::vector<QPointF> err = resizeRectangle(points,er);
 
-    //Create QPolygon
-    QPolygon er_pol;
+    //Create QPolygonF
+    QPolygonF er_pol;
     er_pol.append(err[0]);
     er_pol.append(err[1]);
     er_pol.append(err[2]);
@@ -458,7 +458,7 @@ QPolygon Algorithms::weightedBisector(std::vector <QPoint> &points)
     return er_pol;
 }
 
-double Algorithms::LH(std::vector <QPoint> &points)
+double Algorithms::LH(std::vector <QPointF> &points)
 {
     //Get area of building by L' Huillier formula
     int n = points.size();
@@ -474,7 +474,7 @@ double Algorithms::LH(std::vector <QPoint> &points)
     return 0.5 * fabs(area);
 }
 
-std::vector <QPoint> Algorithms::resizeRectangle(std::vector <QPoint> &points, std::vector <QPoint> &er)
+std::vector <QPointF> Algorithms::resizeRectangle(std::vector <QPointF> &points, std::vector <QPointF> &er)
 {
     //Resize rectangle to given area
 
@@ -502,13 +502,13 @@ std::vector <QPoint> Algorithms::resizeRectangle(std::vector <QPoint> &points, s
     double u4y = er[3].y() - yc;
 
     //Create new rectangle vertices
-    QPoint v1_(xc + sqrt(k) * u1x, yc + sqrt(k) * u1y);
-    QPoint v2_(xc + sqrt(k) * u2x, yc + sqrt(k) * u2y);
-    QPoint v3_(xc + sqrt(k) * u3x, yc + sqrt(k) * u3y);
-    QPoint v4_(xc + sqrt(k) * u4x, yc + sqrt(k) * u4y);
+    QPointF v1_(xc + sqrt(k) * u1x, yc + sqrt(k) * u1y);
+    QPointF v2_(xc + sqrt(k) * u2x, yc + sqrt(k) * u2y);
+    QPointF v3_(xc + sqrt(k) * u3x, yc + sqrt(k) * u3y);
+    QPointF v4_(xc + sqrt(k) * u4x, yc + sqrt(k) * u4y);
 
     //Add vertices to vector
-    std::vector<QPoint> er_res = {v1_, v2_, v3_, v4_};
+    std::vector<QPointF> er_res = {v1_, v2_, v3_, v4_};
 
     return er_res;
 }

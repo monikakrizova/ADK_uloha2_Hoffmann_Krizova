@@ -25,25 +25,25 @@ void Widget::on_pushButtonClear_clicked()
 void Widget::on_pushButtonSimplify_clicked()
 {
     //Get pols
-    std::vector<QPolygon> polygons = ui->Canvas->getPolygons();
+    std::vector<QPolygonF> polygons = ui->Canvas->getPolygons();
 
     //Create enclosing rectangle
     Algorithms a;
-    std::vector<QPolygon> ers, chs;
-    std::vector<QPoint> points;
+    std::vector<QPolygonF> ers, chs;
+    std::vector<QPointF> points;
 
     if (ui->comboBox->currentIndex()==1) //Wall average
     {
         for (unsigned int i = 0; i < polygons.size(); i++)
         {
-            QPolygon pol = polygons[i];
+            QPolygonF pol = polygons[i];
             points.clear();
             for (int j = 0; j < pol.size(); j++)
             {
                 points.push_back(pol[j]);
             }
 
-            QPolygon er = a.wallAverage(points);
+            QPolygonF er = a.wallAverage(points);
             ers.push_back(er);
 
         }
@@ -54,14 +54,14 @@ void Widget::on_pushButtonSimplify_clicked()
     {
         for (unsigned int i = 0; i < polygons.size(); i++)
         {
-            QPolygon pol = polygons[i];
+            QPolygonF pol = polygons[i];
             points.clear();
             for (int j = 0; j < pol.size(); j++)
             {
                 points.push_back(pol[j]);
             }
 
-            QPolygon er = a.minAreaEnclosingRectangle(points);
+            QPolygonF er = a.minAreaEnclosingRectangle(points);
             ers.push_back(er);
 
         }
@@ -71,14 +71,14 @@ void Widget::on_pushButtonSimplify_clicked()
     {
         for (unsigned int i = 0; i < polygons.size(); i++)
         {
-            QPolygon pol = polygons[i];
+            QPolygonF pol = polygons[i];
             points.clear();
             for (int j = 0; j < pol.size(); j++)
             {
                 points.push_back(pol[j]);
             }
 
-            QPolygon er = a.longestEdge(points);
+            QPolygonF er = a.longestEdge(points);
             ers.push_back(er);
 
         }
@@ -88,14 +88,14 @@ void Widget::on_pushButtonSimplify_clicked()
     {
         for (unsigned int i = 0; i < polygons.size(); i++)
         {
-            QPolygon pol = polygons[i];
+            QPolygonF pol = polygons[i];
             points.clear();
             for (int j = 0; j < pol.size(); j++)
             {
                 points.push_back(pol[j]);
             }
 
-            QPolygon er = a.weightedBisector(points);
+            QPolygonF er = a.weightedBisector(points);
             ers.push_back(er);
 
         }
@@ -110,6 +110,7 @@ void Widget::on_pushButtonSimplify_clicked()
 void Widget::on_pushButtonLoadData_clicked()
 {
     //Open text file with dialog
+    //QString file_name = "D:/Github/ADK/ADKI_uloha1/polygon_JTSK.txt";
     QString file_name = QFileDialog::getOpenFileName(this, tr("Open Text file"), "", tr("Text Files (*.txt)"));
     ui->Canvas->loadData(file_name);
     repaint();
@@ -119,17 +120,17 @@ void Widget::on_pushButtonLoadData_clicked()
 void Widget::on_pushButtonConvexHull_clicked()
 {
     //Get pols
-    std::vector<QPolygon> polygons = ui->Canvas->getPolygons();
+    std::vector<QPolygonF> polygons = ui->Canvas->getPolygons();
 
     //Create enclosing rectangle
     Algorithms a;
-    QPolygon ch;
-    std::vector<QPolygon> chs;
-    std::vector<QPoint> points;
+    QPolygonF ch;
+    std::vector<QPolygonF> chs;
+    std::vector<QPointF> points;
 
     for (unsigned int i = 0; i < polygons.size(); i++)
     {
-        QPolygon pol = polygons[i];
+        QPolygonF pol = polygons[i];
         points.clear();
         ch.clear();
         for (int j = 0; j < pol.size(); j++)
