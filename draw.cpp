@@ -11,7 +11,7 @@ void Draw::paintEvent(QPaintEvent *event)
     QPainter qp(this);
     qp.begin(this);
 
-    QPolygon pol;
+    QPolygonF pol;
 
     //Draw polygons
     for (unsigned int i = 0; i < buildings.size(); i++)
@@ -58,10 +58,10 @@ void Draw::clear()
 void Draw::loadData(QString &file_name)
 {
     //Load data from the *.txt file
-    QPolygon polygon;
-    std::vector<QPolygon> buildings_;
+    QPolygonF polygon;
+    std::vector<QPolygonF> buildings_;
 
-    QPoint vertice;
+    QPointF vertice;
 
     QFile inputFile(file_name);
     if (inputFile.open(QIODevice::ReadOnly))
@@ -82,29 +82,29 @@ void Draw::loadData(QString &file_name)
                     buildings_.push_back(polygon);
                 polygon.clear();
 
-                //Add vertice to the end of the QPoint vector
+                //Add vertice to the end of the QPointF vector
                 vertice.setX(x);
                 vertice.setY(y);
                 polygon.append(vertice);
             }
             else
             {
-                //Add vertice to the end of the QPoint vector
+                //Add vertice to the end of the QPointF vector
                 vertice.setX(x);
                 vertice.setY(y);
                 polygon.append(vertice);
             }
 
             //Find max Y and min X to determine origin of local system
-            QPoint pymax = *std::max_element(polygon.begin(), polygon.end(), sortByY());
+            QPointF pymax = *std::max_element(polygon.begin(), polygon.end(), sortByY());
             double yy = pymax.y();
-            QPoint pxmin = *std::min_element(polygon.begin(), polygon.end(), sortByX());
+            QPointF pxmin = *std::min_element(polygon.begin(), polygon.end(), sortByX());
             double xx = pxmin.x();
 
             //Additionaly find min Y and max X to determine the scale in both directions
-            QPoint pymin = *std::min_element(polygon.begin(), polygon.end(), sortByY());
+            QPointF pymin = *std::min_element(polygon.begin(), polygon.end(), sortByY());
             double yy_ = pymin.y();
-            QPoint pxmax = *std::max_element(polygon.begin(), polygon.end(), sortByX());
+            QPointF pxmax = *std::max_element(polygon.begin(), polygon.end(), sortByX());
             double xx_ = pxmax.x();
 
             if (yy > y_max)
@@ -117,7 +117,7 @@ void Draw::loadData(QString &file_name)
                 x_max = xx_;
         }
 
-        //Save polygon to the vector of QPolygons
+        //Save polygon to the vector of QPolygonFs
         buildings_.push_back(polygon);
     }
     //Compute scales to zoom in in canvas
@@ -146,7 +146,7 @@ void Draw::loadData(QString &file_name)
     //Trosform coordinates from JTSK to canvas
     for (int unsigned i = 0; i < buildings_.size(); i++)
     {
-        QPolygon pol = buildings_[i];
+        QPolygonF pol = buildings_[i];
         for (int j = 0; j < pol.size(); j++)
         {
             //std::cout << "y: "<< pol[j].y() << "x: "<< pol[j].x() << std::endl;
