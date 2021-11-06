@@ -74,7 +74,7 @@ void Draw::loadData(QString &file_name)
             double y = line.split(" ")[1].toDouble();
             double x = line.split(" ")[2].toDouble();
 
-            std::cout << "y: "<< y << std::endl;
+           // std::cout << "y: "<< y << std::endl;
 
             if (id == 1)
             {

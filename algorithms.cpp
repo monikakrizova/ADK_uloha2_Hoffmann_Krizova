@@ -65,9 +65,11 @@ double Algorithms::getPointLineDistance(QPointF &a, QPointF &p1, QPointF &p2)
     //Compute distance between line and point
     double up = fabs(a.x()*(p1.y() - p2.y()) + p1.x()*(p2.y() - a.y()) + p2.x()*(a.y() - p1.y()));
 
+    //Coordinate differences
     double dx = p2.x()-p1.x();
     double dy = p2.y()-p1.y();
 
+    //Lenght
     double d = sqrt(dx*dx + dy*dy);
 
     return up/d;
@@ -121,7 +123,7 @@ QPolygonF Algorithms::cHull (std::vector <QPointF> &points)
 
 QPolygonF Algorithms::qHull (std::vector <QPointF> &points)
 {
-    //Create quick hull
+    //Create convex hull using method Quick hull
     QPolygonF qh;
     std::vector<QPointF> su;
     std::vector<QPointF> sl;
@@ -139,19 +141,29 @@ QPolygonF Algorithms::qHull (std::vector <QPointF> &points)
     sl.push_back(q1);
     sl.push_back(q3);
 
+
     for (unsigned int i = 0; i < points.size(); i++)
     {
+        //Get position of point and line (between pivots)
         int result = getPointLinePosition(points[i],q1,q3);
+
         if (result == 1)
             //Point in upper part
             su.push_back(points[i]);
+
         else if (result == 0)
+            //Point in lower part
             sl.push_back(points[i]);
     }
 
+    //Add pivot to convex hull polygon
     qh.append(q3);
+    //Call recursive function
     qHullRecursive(1,0,su,qh);
+
+    //Add pivot to convex hull polygon
     qh.append(q1);
+    //Call recursive function
     qHullRecursive(0,1,sl,qh);
 
     return qh;
@@ -159,17 +171,24 @@ QPolygonF Algorithms::qHull (std::vector <QPointF> &points)
 
 void Algorithms::qHullRecursive(int r, int s, std::vector<QPointF> &points, QPolygonF &ch)
 {
-    double d_max = 0;
+    //Recursive function to qH
+
+    //Initializing variables
     int i_max = -99;
+    double d_max = 0;
 
     for (int unsigned i = 2; i < points.size(); i++)
     {
+        //Get position of point and line between pivots
         int result = getPointLinePosition(points[i],points[r],points[s]);
 
+        //If the point is in right halfplane
         if (result == 0)
         {
+            //Compute distance betweeen point and line (between pivots)
             double dist = getPointLineDistance(points[i], points[r], points[s]);
 
+            //Check if newly calculated distance is bigger than maximal distance
             if (dist > d_max)
             {
                 d_max = dist;
@@ -178,6 +197,8 @@ void Algorithms::qHullRecursive(int r, int s, std::vector<QPointF> &points, QPol
         }
 
     }
+
+    //Check if the maximal distance was found
     if (i_max != -99)
     {
         qHullRecursive(r, i_max, points, ch);
@@ -361,12 +382,12 @@ QPolygonF Algorithms::longestEdge(std::vector <QPointF> &points)
     int n = points.size();
     for (int i = 0; i < n; i++)
     {
-        //Compute coords differences and length
+        //Compute coordinates differences and length
         double dxi = points[(i+1)%n].x() - points[i].x();
         double dyi = points[(i+1)%n].y() - points[i].y();
         double lengthi = sqrt(dxi*dxi + dyi*dyi);
 
-        //Check if length [i] is bigger than max legth
+        //Check if computed length is bigger than max legth
         if (lengthi > d_max)
         {
             d_max = lengthi;
@@ -418,7 +439,7 @@ QPolygonF Algorithms::weightedBisector(std::vector <QPointF> &points)
             double lengthi = sqrt(dxi*dxi + dyi*dyi);
 
             //Check if length [i] is bigger than max legth of diagonal
-            if (lengthi >= u1_max)
+            if (lengthi > u1_max)
             {
                 //Update two longest diagonals
                 u2_max = u1_max;
@@ -431,6 +452,7 @@ QPolygonF Algorithms::weightedBisector(std::vector <QPointF> &points)
         }
     }
 
+    std::cout<< "dx1: " << dx1 << ", dx2: " << dx2 << ", dy1: " << dy1 << ", dy2: " << dy2 << std::endl;
     //Compute direction by weighted avarage
     sigma1 = atan2(dy1,dx1);
     sigma2 = atan2(dy2,dx2);
