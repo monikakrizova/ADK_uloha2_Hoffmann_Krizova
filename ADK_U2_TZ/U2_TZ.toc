@@ -28,18 +28,18 @@
 \contentsline {paragraph}{QPolygonF cHull (std::vector <QPointF> \&points)}{17}{}%
 \contentsline {paragraph}{QPolygonF qHull (std::vector <QPointF> \&points)}{17}{}%
 \contentsline {paragraph}{void qHullRecursive(int r, int s, std::vector<QPointF> \&points, QPolygonF \&ch)}{17}{}%
-\contentsline {paragraph}{std::vector <QPointF> rotate(std::vector <QPointF> \&points, double sigma);}{17}{}%
-\contentsline {paragraph}{std::tuple<std::vector<QPointF>, double> minMaxBox(std::vector <QPointF> \&points);}{17}{}%
+\contentsline {paragraph}{std::vector <QPointF> rotate(std::vector <QPointF> \&points, double sig\-ma);}{17}{}%
+\contentsline {paragraph}{std::tuple<std::vector<QPointF>, double> minMaxBox(std::vector <QPoi\-ntF> \&points);}{17}{}%
 \contentsline {paragraph}{QPolygonF minAreaEnclosingRectangle(std::vector <QPointF> \&points);}{18}{}%
 \contentsline {paragraph}{QPolygonF wallAverage(std::vector <QPointF> \&points);}{18}{}%
 \contentsline {paragraph}{QPolygonF longestEdge(std::vector <QPointF> \&points);}{18}{}%
 \contentsline {paragraph}{QPolygonF weightedBisector(std::vector <QPointF> \&points);}{18}{}%
 \contentsline {paragraph}{double LH(std::vector <QPointF> \&points);}{18}{}%
-\contentsline {paragraph}{std::vector <QPointF> resizeRectangle(std::vector <QPointF> \&points, std::vector <QPointF> \&er);}{19}{}%
+\contentsline {paragraph}{std::vector <QPointF> resizeRectangle(std::vector <QPointF> \&points, \newline std::vector <QPointF> \&er);}{19}{}%
 \contentsline {subsection}{\numberline {9.2}Třída Draw}{19}{}%
 \contentsline {paragraph}{void paintEvent(QPaintEvent *event);}{19}{}%
 \contentsline {paragraph}{void clear();}{20}{}%
-\contentsline {paragraph}{std::vector<QPolygonF> getPolygons()\{return buildings;\}}{20}{}%
+\contentsline {paragraph}{std::vector<QPolygonF> getPolygons()}{20}{}%
 \contentsline {paragraph}{void setCh(std::vector <QPolygonF> \&ch\_);}{20}{}%
 \contentsline {paragraph}{void setEr(std::vector <QPolygonF> \&er\_); }{20}{}%
 \contentsline {paragraph}{void loadData(QString \&file\_name);}{20}{}%

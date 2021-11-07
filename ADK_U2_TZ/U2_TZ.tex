@@ -462,10 +462,10 @@
 	Funkce je rekurzivní funkcí k výše uvedené funkci qHull. Touto funkcí se přidávají části konvexní obálky $\mathcal{H_U}$ a $\mathcal{H_L}$ do výsledné konvexní obálky $\mathcal{H}$.
  	Vstupními argumenty jsou integery r a s, jež označují směr linie mezi pivoty \textit{$ q_1 $} a \textit{$ q_3 $}. Tyto body jsou uloženy ve vektoru \textit{points} (popsán níže) na prvních dvou místech, volá-li se tedy funkce například s těmito parametry: qHullRecursive(1,0,su,qh), bude počátečním bodem linie pivot \textit{$ q_3 $} a konečným bodem pivot \textit{$ q_1 $}. Třetím vstupním argumentem je vektor bodů \textit{QPointF} \textit{points}, do této proměnné se ukládá  $\mathcal{H_U}$ nebo $\mathcal{H_L}$. Posledním vstupním argumentem je \textit{QPolygonF}, do nějž se bude ukládat horní/spodní část konvexní obálky. Návratový typ funkce je void, funkce tedy nevrací žádnou proměnnou, pouze ukládá body do předem vytvořené proměnné.
  	
- 	\paragraph{std::vector <QPointF> rotate(std::vector <QPointF> \&points, double sigma);}
+ 	\paragraph{std::vector <QPointF> rotate(std::vector <QPointF> \&points, double sig\-ma);}
  	Otáčí množinu bodů u úhel sigma. Vstupními hodnotami jsou vektor bodů datového typu QPointF a úhel sigma, která vstupuje do transformační rovnice. Funkce opět vrací vektor bodů datového typu QPointF.
  	
- 	\paragraph{std::tuple<std::vector<QPointF>, double> minMaxBox(std::vector <QPointF> \&points);}
+ 	\paragraph{std::tuple<std::vector<QPointF>, double> minMaxBox(std::vector  <QPoi\-ntF> \&points);}
  	Vytváří kolem polygonu minimální ohraničující obdélník s vrcholy s extrémními souřadnicemi polygonu, nad kterým se obdélník vytváří. Vstupní hodnotou je vektor datového typu QPointF. Funkce vrací minimální ohraničující obdélník ve vektoru QPointF a jeho plochu s datovým typem double. Aby funkce mohla vracet dva objekty, je nutné je vracet jako tuple.
  	
  	\paragraph{QPolygonF minAreaEnclosingRectangle(std::vector <QPointF> \&points);}
@@ -481,9 +481,9 @@
  	Generalizuje polygon, jehož hlavní směr je určen metodou Weighted Bisector, která hlavní směr určuje váženým průměrem směrů dvou nejdelších úhlopříček. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
  	
  	\paragraph{double LH(std::vector <QPointF> \&points);}
- 	Počítá plochu budovy pomocí L'Hullierova vzorce. Vstupní hodnotou je vektor datového typu QPointF, výstupní hodnotou je plocha budovy typu double.
+ 	Počítá plochu budovy pomocí L'Hullierova vzorce. Vstupní hodnotou je vektor datového typu QPoi\-ntF, výstupní hodnotou je plocha budovy typu double.
  	
- 	\paragraph{std::vector <QPointF> resizeRectangle(std::vector <QPointF> \&points, std::vector <QPointF> \&er);}
+ 	\paragraph{std::vector <QPointF> resizeRectangle(std::vector <QPointF> \&points, \newline std::vector <QPointF> \&er);}
  	Mění velikost generalizované budovy tak, aby se její plocha shodovala s plochou původní budovy. Vstupními hodnotami jsou vektor bodů datového typu QPointF představující původní budovu a vektor bodů datového typu QPointF představující generalizovanou budovu. Funkce vrací opět vektor bodů datového typu QPointF, který představuje generalizovanou budovu s plochou odpovídající původní budově.
 	 	
 	 	
@@ -517,9 +517,9 @@
  	\paragraph{void clear();}\mbox{}\\
  	Funkce smaže veškeré objekty, jež jsou vykresleny na plátně. Funkce nemá vstupní argumenty. 
  	
- 	\paragraph{std::vector<QPolygonF> getPolygons()\{return buildings;\}}
+ 	\paragraph{std::vector<QPolygonF> getPolygons()}
  	
- 	Funkce vrací vektor polygonů načtených z textového souboru – návratový typ je std::vector<QPolygon>, funkce nemá vstupní argumenty.
+ 	Funkce vrací vektor polygonů načtených z textového souboru – návratový typ je vector <QPolygon>, funkce nemá vstupní argumenty.
  	
 	\paragraph{void setCh(std::vector <QPolygonF> \&ch\_);}
 	Ukládá proměnnou třídy Widget do proměnné třídy Draw. Vstupem jsou konvexní obálky, tj. vektor polygonů QPolygonF. Funkce nic nevrací.
@@ -563,9 +563,19 @@
 	%----------------------------------------------------------------------------------------
 	
 	\section{Závěr}
-	Vytvořená aplikace obsahuje čtyři tlačítka a plátno. Tlačítkem \textit{Load Data} se načítají polygony budov, které jsou po souřadnicích v systému S-JTSK uloženy ve špagetovém modelu v textovém souboru. Tlačítkem \textit{Building Simplify} lze polygony budov generalizovat jednou ze čtyř popsaných metod, tj. Minimum Area Enclosing Rectangle, Wall Avarage, Longest Edge a Weighted Bisector. Po stisknutí tlačítka \textit{Create convex hull} se kolem jednotlivých polygonů vytvoří konvexní obálky vytvořené metodou Jarvis Scan či metodou Quick Hull. Tlačítkem \textit{Clear} se pak plátno vyčistí. Jednotlivé algoritmy byly popsány v kapitole 3.	
-		
-		
+
+	Vytvořená aplikace obsahuje čtyři tlačítka a plátno. Tlačítkem \textit{Load Data} se načítají polygony budov, které jsou po souřadnicích v systému S-JTSK uloženy ve špagetovém modelu v textovém souboru. Tlačítkem \textit{Building Simplify} lze polygony budov generalizovat jednou ze čtyř popsaných metod, tj. Minimum Area Enclosing Rectangle, Wall Avarage, Longest Edge a Weighted Bisector. Po stisknutí tlačítka \textit{Create convex hull} se kolem jednotlivých polygonů vytvoří konvexní obálky vytvořené metodou Jarvis Scan či metodou Quick Hull. Tlačítkem \textit{Clear} se pak plátno vyčistí. Jednotlivé algoritmy byly popsány v kapitole 3.
+	
+	Algoritmy pro výpočet konvexní obálky vykazují shodné výsledky. Metody pro výpočet hlavního směru generalizované budovy se však ve výsledku liší.
+	Největší rozdíl při geneneralizování metodami Minimum Enclosing Area a Wall Average byl shledán u objektů s tupými úhly a u objektů s velkým množstvím výběžků.
+	
+	Metody Minimum Area Enclosing Rectangle a Longest Edge dávají na našich datech poměrně shodné výsledky. Výjimkou je však budova s největší plochou ve tvaru Z. Každá strana budovy je zcela jinak orientovaná a nelze na první pohled snadno určit, která hrana je nejdelší. A jelikož se nejdelší strana budovy neshoduje s nejdelší stranou generalizované budovy, zdá se, že generalizace nemá vhodnou orientaci.
+	
+	Budovy generalizované metodou Weighted Bisector jsou často znatelně natočené oproti původním polygonům i oproti výsledkům zbylých třech generalizačních algoritmů. Je tedy možné, že algoritmus nebyl správně implementován.
+	
+	Na ukázkových datech by pravděpodobně byla nejlepší volbou metoda Minimum Area Enclosing Box. 
+	
+
 
 		
 	\end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.11.6)  8 NOV 2021 00:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.11.6)  8 NOV 2021 00:56
 entering extended mode
 **./U2_TZ.tex
 (U2_TZ.tex
@@ -480,15 +480,9 @@ d-no-tou funkce je double
  []
 
 [16]
-Overfull \hbox (12.34103pt too wide) in paragraph at lines 466--467
- \T1/ppl/b/n/10.95 std::vector <QPointF> ro-tate(std::vector <QPointF> &points,
- double sigma);[]
- []
-
-
-Overfull \hbox (21.50635pt too wide) in paragraph at lines 469--470
+Overfull \hbox (2.09218pt too wide) in paragraph at lines 469--470
  \T1/ppl/b/n/10.95 std::tuple<std::vector<QPointF>, double> min-Ma-x-Box(std::v
-ector <QPointF>
+ector <QPoi-
  []
 
 [17]
@@ -504,15 +498,9 @@ Overfull \hbox (0.74463pt too wide) in paragraph at lines 481--482
  []
 
 
-Overfull \hbox (14.24828pt too wide) in paragraph at lines 484--485
+Overfull \hbox (0.1339pt too wide) in paragraph at lines 484--485
 \T1/ppl/m/n/10.95 mocí L'Hullierova vzorce. Vstupní hod-no-tou je vek-tor da-to
--vého typu QPointF,
- []
-
-
-Overfull \hbox (39.74858pt too wide) in paragraph at lines 487--488
- \T1/ppl/b/n/10.95 std::vector <QPointF> re-si-ze-Rectan-gle(std::vector <QPoin
-tF> &points, std::vector
+-vého typu QPoi-
  []
 
 [18]
@@ -522,9 +510,9 @@ jekt· a kreslí na plátno
  []
 
 [19]
-Overfull \hbox (76.30783pt too wide) in paragraph at lines 522--523
-\T1/ppl/m/n/10.95 vek-tor po-ly-gon· na-£te-ných z tex-to-vého sou-boru  ná-vr
-a-tový typ je std::vector<QPolygon>,
+Overfull \hbox (4.06146pt too wide) in paragraph at lines 522--523
+ \T1/ppl/b/n/10.95 std::vector<QPolygonF> get-Po-ly-gons()[] \T1/ppl/m/n/10.95 
+Funkce vrací vek-tor po-ly-gon· na-
  []
 
 
@@ -533,7 +521,7 @@ Overfull \hbox (5.01492pt too wide) in paragraph at lines 525--526
 .95 Ukládá pro-m¥n-nou t°ídy Wi-
  []
 
-[20] [21] (U2_TZ.aux) ) 
+[20] [21] [22] (U2_TZ.aux) ) 
 Here is how much of TeX's memory you used:
  4835 strings out of 478927
  72940 string characters out of 2852535
@@ -542,27 +530,27 @@ Here is how much of TeX's memory you used:
  440013 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,75p,832b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
-{C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/enc/
-dvips/base/8r.enc}<C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmb10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/monik/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/monik/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/monik/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/mo
-nik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/U
-sers/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmti10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmti9.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/mathpazo/fplmr.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/mathpazo/fplmri.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/f
-onts/type1/urw/palatino/uplb8a.pfb><C:/Users/monik/AppData/Local/Programs/MiKTe
-X/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/monik/AppData/Local/Programs/Mi
-KTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on U2_TZ.pdf (22 pages, 501888 bytes).
+{C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts
+/enc/dvips/base/8r.enc}<C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmb10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/monik/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/monik/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/monik/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/moni
+k/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Use
+rs/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+<C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmti9.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/mathpazo/fplmr.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/mathpazo/fplmri.pfb><C:/Users/monik/AppData/Local/Programs/MiK
+TeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/monik/AppData/Local/Programs/
+MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/monik/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on U2_TZ.pdf (23 pages, 503030 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
+ 207 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
