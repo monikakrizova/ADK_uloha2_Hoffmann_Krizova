@@ -452,7 +452,6 @@
 	\paragraph{double getPointLineDistance(QPointF \&a, QPointF \&p1, QPointF \&p2);}
 	Počítá vzdálenost mezi bodem a přímkou definovanou dvěma vrcholy polygonu. Vstupní hodnoty jsou 3 body datového typu QpointF. 
 	
-	\subsection{Třída Algorithms}
 	\paragraph{QPolygonF cHull (std::vector <QPointF> \&points)}\mbox{}\\
 	Funkce vytváří konvexní obálku metodou Jarvis scan popsanou v kapitole 4.1.1. Vstupním argumentem funkce je vektor obsahující body množiny \textit{S}, body jsou uloženy jako \textit{QPointF}. 	Návratovým typem funkce je \textit{QPolygonF}, tedy polygon se souřadnicemi uloženými s přesností float obsahující souřadnice vrcholů vypočtené konvexní obálky.
 	
@@ -470,7 +469,7 @@
  	Vytváří kolem polygonu minimální ohraničující obdélník s vrcholy s extrémními souřadnicemi polygonu, nad kterým se obdélník vytváří. Vstupní hodnotou je vektor datového typu QPointF. Funkce vrací minimální ohraničující obdélník ve vektoru QPointF a jeho plochu s datovým typem double. Aby funkce mohla vracet dva objekty, je nutné je vracet jako tuple.
  	
  	\paragraph{QPolygonF minAreaEnclosingRectangle(std::vector <QPointF> \&points);}
- 	Generalizuje polygon, jehož hlavní směr je určen metodou Minimum Area Enclosing Rectangle. Hlavní směr je zde určen stranou konvexní obálky, která minimalizuje plochu minimální  ohraničujícího obdélníku otočeného o její směrnici. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
+ 	Generalizuje polygon, jehož hlavní směr je určen metodou Minimum Area Enclosing Rectangle. Hlavní směr je zde určen stranou konvexní obálky, která minimalizuje plochu minimálního ohraničujícího obdélníku otočeného o její směrnici. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
  	
  	\paragraph{QPolygonF wallAverage(std::vector <QPointF> \&points);}
  	Generalizuje polygon, jehož hlavní směr je určen metodou Wall Avarage, kde je hlavní směr dán váženým průměrem, do kterého vstupují směrnice první strany polygonu, rezidua po dělení směrnic hodnotou $\pi/2$ a délka strany. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
@@ -522,10 +521,10 @@
  	
  	Funkce vrací vektor polygonů načtených z textového souboru – návratový typ je std::vector<QPolygon>, funkce nemá vstupní argumenty.
  	
-	\paragraph{void setCh(std::vector <QPolygonF> \&ch\_\{chs = ch\_;\}}
+	\paragraph{void setCh(std::vector <QPolygonF> \&ch\_);}
 	Ukládá proměnnou třídy Widget do proměnné třídy Draw. Vstupem jsou konvexní obálky, tj. vektor polygonů QPolygonF. Funkce nic nevrací.
 	
-	\paragraph{void setEr(std::vector <QPolygonF> \&er\_)\{ers = er\_;\}}
+	\paragraph{void setEr(std::vector <QPolygonF> \&er\_);                                                                                                                                                                                                                                                                             }
 	Ukládá proměnou třídy Widget do proměnné třídy Draw. Vstupem jsou generalizované budovy, tj. vektor polygonů QPolygonF. Funkce nic nevrací.
  	
  	\paragraph{void loadData(QString \&file\_name);}\mbox{}\\
@@ -538,7 +537,7 @@
  	Třída definuje operátor přetížení, který řadí body podle y-ové souřadnice.
  	
  	\subsection{Třída Widget}
- 	Třída Widget obsahuje 3 metody:
+ 	Třída Widget obsahuje 4 metody:
  	
  	\begin{itemize}
  		\item void on\_pushButtonClear\_clicked();
@@ -549,7 +548,7 @@
  	\end{itemize}
  	
  	\paragraph{ void on\_pushButtonClear\_clicked();}\mbox{}\\
- 	Funkce se volá při stisknutí tlačítka Clear, volá funkci clear(), jež je definovaná v třídě Draw.
+ 	Funkce se volá při stisknutí tlačítka Clear, volá funkci clear(), jež je definovaná v třídě Draw a slouží ke smazání obsahu canvasu.
  	
  	\paragraph{ void on\_pushButtonAnalyze\_clicked();}\mbox{}\\
  	Funkce se volá při stisknutí tlačítka Building simplify a provádí jednotlivé metody generalizace budov na základně indexu v comboboxu. 
@@ -557,7 +556,8 @@
  	\paragraph{void on\_pushButtonLoad\_clicked();}\mbox{}\\
  	Funkce slouží k inicializaci načítání souboru, spustí se po stisknutí tlačítka Load, čímž zobrazí dialog pro výběr souboru obsahujícího data, jež mají být načtena do aplikace. Po výběru souboru se zavolá funkce loadData ze třídy Draw, která přečte data ze souboru a uloží je do proměnné.
  	
-	
+	\paragraph{void on\_pushButtonConvexHull\_clicked();}\mbox{}\\
+	Funkce se volá po stisknutí tlačítka Create convex hull, slouží k volání funkcí, jež vytvoří a vykreslí konvexní obálku. 
 	%----------------------------------------------------------------------------------------
 	%	ZÁVĚR
 	%----------------------------------------------------------------------------------------

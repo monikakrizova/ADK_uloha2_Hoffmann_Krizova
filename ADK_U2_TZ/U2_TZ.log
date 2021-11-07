@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.11.6)  7 NOV 2021 23:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.11.6)  8 NOV 2021 00:14
 entering extended mode
 **./U2_TZ.tex
 (U2_TZ.tex
@@ -480,51 +480,57 @@ d-no-tou funkce je double
  []
 
 [16]
-Overfull \hbox (12.34103pt too wide) in paragraph at lines 467--468
+Overfull \hbox (12.34103pt too wide) in paragraph at lines 466--467
  \T1/ppl/b/n/10.95 std::vector <QPointF> ro-tate(std::vector <QPointF> &points,
  double sigma);[]
  []
 
 
-Overfull \hbox (21.50635pt too wide) in paragraph at lines 470--471
+Overfull \hbox (21.50635pt too wide) in paragraph at lines 469--470
  \T1/ppl/b/n/10.95 std::tuple<std::vector<QPointF>, double> min-Ma-x-Box(std::v
 ector <QPointF>
  []
 
 [17]
-Overfull \hbox (2.26584pt too wide) in paragraph at lines 473--474
+Overfull \hbox (2.26584pt too wide) in paragraph at lines 472--473
  \T1/ppl/b/n/10.95 QPo-ly-gonF mi-nA-re-a-Enc-lo-sin-gRectan-gle(std::vector <Q
 PointF> &points);[]
  []
 
 
-Overfull \hbox (0.74463pt too wide) in paragraph at lines 482--483
+Overfull \hbox (0.74463pt too wide) in paragraph at lines 481--482
 \T1/ppl/m/n/10.95 li-zuje po-ly-gon, je-hoº hlavní sm¥r je ur-£en me-to-dou Wei
 -gh-ted Bi-s-ec-tor, která
  []
 
 
-Overfull \hbox (14.24828pt too wide) in paragraph at lines 485--486
+Overfull \hbox (14.24828pt too wide) in paragraph at lines 484--485
 \T1/ppl/m/n/10.95 mocí L'Hullierova vzorce. Vstupní hod-no-tou je vek-tor da-to
 -vého typu QPointF,
  []
 
 
-Overfull \hbox (39.74858pt too wide) in paragraph at lines 488--489
+Overfull \hbox (39.74858pt too wide) in paragraph at lines 487--488
  \T1/ppl/b/n/10.95 std::vector <QPointF> re-si-ze-Rectan-gle(std::vector <QPoin
 tF> &points, std::vector
  []
 
 [18]
-Overfull \hbox (5.61566pt too wide) in paragraph at lines 515--517
+Overfull \hbox (5.61566pt too wide) in paragraph at lines 514--516
 \T1/ppl/m/n/10.95 Funkce na-sta-vuje gra-fické atri-buty vy-kres-lo-va-ných ob-
 jekt· a kreslí na plátno
  []
 
 [19]
-Overfull \hbox (76.30783pt too wide) in paragraph at lines 523--524
+Overfull \hbox (76.30783pt too wide) in paragraph at lines 522--523
 \T1/ppl/m/n/10.95 vek-tor po-ly-gon· na-£te-ných z tex-to-vého sou-boru  ná-vr
 a-tový typ je std::vector<QPolygon>,
+ []
+
+
+Overfull \hbox (5.01492pt too wide) in paragraph at lines 525--526
+ \T1/ppl/b/n/10.95 void setCh(std::vector <QPo-ly-gonF> &ch_);[] \T1/ppl/m/n/10
+.95 Ukládá pro-m¥n-nou t°ídy Wi-
  []
 
 [20] [21] (U2_TZ.aux) ) 
@@ -554,7 +560,7 @@ ype1/public/mathpazo/fplmri.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/f
 onts/type1/urw/palatino/uplb8a.pfb><C:/Users/monik/AppData/Local/Programs/MiKTe
 X/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/monik/AppData/Local/Programs/Mi
 KTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on U2_TZ.pdf (22 pages, 501857 bytes).
+Output written on U2_TZ.pdf (22 pages, 501888 bytes).
 PDF statistics:
  204 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
