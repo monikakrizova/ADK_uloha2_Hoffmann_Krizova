@@ -1,0 +1,22 @@
+\babel@toc {czech}{}\relax 
+\contentsline {section}{\numberline {1}Zadání}{2}{}%
+\contentsline {section}{\numberline {2}Údaje o bonusových úlohách}{4}{}%
+\contentsline {section}{\numberline {3}Popis problému}{4}{}%
+\contentsline {section}{\numberline {4}Popisy algoritmů}{5}{}%
+\contentsline {subsection}{\numberline {4.1}Tvorba konvexní obálky}{5}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Jarvis scan}{5}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}Quick Hull}{5}{}%
+\contentsline {subsection}{\numberline {4.2}Generalizace budov}{5}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Minimum Enlosing Rectangle}{5}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Metoda Wall Average}{7}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}Metoda Longest Edge}{7}{}%
+\contentsline {subsubsection}{\numberline {4.2.4}Metoda Weighted Bisector}{8}{}%
+\contentsline {section}{\numberline {5}Problematické situace}{8}{}%
+\contentsline {section}{\numberline {6}Vstupní data}{8}{}%
+\contentsline {section}{\numberline {7}Výstupní data}{8}{}%
+\contentsline {section}{\numberline {8}Dokumentace}{8}{}%
+\contentsline {subsection}{\numberline {8.1}Třída Algorithms}{8}{}%
+\contentsline {paragraph}{QPolygonF cHull (std::vector <QPointF> \&points)}{8}{}%
+\contentsline {paragraph}{QPolygonF qHull (std::vector <QPointF> \&points)}{9}{}%
+\contentsline {paragraph}{void qHullRecursive(int r, int s, std::vector<QPointF> \&points, QPolygonF \&ch)}{9}{}%
+\contentsline {section}{\numberline {9}Závěr}{9}{}%
