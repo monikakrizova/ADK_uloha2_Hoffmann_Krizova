@@ -1,174 +1,242 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.11.6)  7 NOV 2021 23:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.4)  7 NOV 2021 23:28
 entering extended mode
 **./U2_TZ.tex
 (U2_TZ.tex
-LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-08-27>
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
-File: size11.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(D:\Programy\MikTex\tex/latex/base\article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(D:\Programy\MikTex\tex/latex/base\size11.clo
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
-\c@part=\count182
-\c@section=\count183
-\c@subsection=\count184
-\c@subsubsection=\count185
-\c@paragraph=\count186
-\c@subparagraph=\count187
-\c@figure=\count188
-\c@table=\count189
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen138
+\bibindent=\dimen134
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
-Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks16
-\inpenc@posthook=\toks17
+(D:\Programy\MikTex\tex/latex/base\inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+(D:\Programy\MikTex\tex/latex/base\fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\mathpazo.sty
+(D:\Programy\MikTex\tex/latex/psnfss\mathpazo.sty
 Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
 \symupright=\mathgroup4
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
-Package: babel 2021/07/22 3.63 The Babel package
+(D:\Programy\MikTex\tex/generic/babel\babel.sty
+Package: babel 2020/02/14 3.40 The Babel package
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
-File: babel.def 2021/07/22 3.63 Babel common definitions
-\babel@savecnt=\count190
-\U@D=\dimen139
-\l@unhyphenated=\language79
-
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
-\bbl@readstream=\read2
+(D:\Programy\MikTex\tex/generic/babel\switch.def
+File: switch.def 2020/02/14 3.40 Babel switching mechanism
 )
-\bbl@dirlevel=\count191
-
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+(D:\Programy\MikTex\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/babel-czech\czech.ldf
+(D:\Programy\MikTex\tex/latex/babel-czech\czech.ldf
 Language: czech 2008/07/06 v3.1a Czech support from the babel system
-Package babel Info: Making " an active character on input line 172.
-\cs@wordlen=\count192
-Package babel Info: Making - an active character on input line 226.
-)) (C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.st
-y
-Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks18
+(D:\Programy\MikTex\tex/generic/babel\babel.def
+File: babel.def 2020/02/14 3.40 Babel common definitions
+\babel@savecnt=\count175
+\U@D=\dimen135
+
+(D:\Programy\MikTex\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count176
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
-Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+Package babel Info: Making " an active character on input line 172.
+\cs@wordlen=\count177
+Package babel Info: Making - an active character on input line 226.
+))
+(D:\Programy\MikTex\tex/latex/graphics\graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+(D:\Programy\MikTex\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(D:\Programy\MikTex\tex/latex/graphics\graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\Programy\MikTex\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
-fg
+(D:\Programy\MikTex\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 107.
+Package graphics Info: Driver file: pdftex.def on input line 105.
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+(D:\Programy\MikTex\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen140
-\Gin@req@width=\dimen141
-) (C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2021/04/20 v2.17j AMS math features
+\Gin@req@height=\dimen136
+\Gin@req@width=\dimen137
+)
+(D:\Programy\MikTex\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip49
+
 For additional information on amsmath, use the `?' option.
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(D:\Programy\MikTex\tex/latex/amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+(D:\Programy\MikTex\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks19
-\ex@=\dimen142
+\@emptytoks=\toks17
+\ex@=\dimen138
 ))
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+(D:\Programy\MikTex\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen143
+\pmbraise@=\dimen139
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+(D:\Programy\MikTex\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count193
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count194
-\leftroot@=\count195
-LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count196
-\DOTSCASE@=\count197
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box50
-\strutbox@=\box51
-\big@size=\dimen144
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count198
-\c@MaxMatrixCols=\count199
+\inf@bad=\count178
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count179
+\leftroot@=\count180
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count181
+\DOTSCASE@=\count182
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen140
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count183
+\c@MaxMatrixCols=\count184
 \dotsspace@=\muskip16
-\c@parentequation=\count266
-\dspbrk@lvl=\count267
-\tag@help=\toks20
-\row@=\count268
-\column@=\count269
-\maxfields@=\count270
-\andhelp@=\toks21
-\eqnshift@=\dimen145
-\alignsep@=\dimen146
-\tagshift@=\dimen147
-\tagwidth@=\dimen148
-\totwidth@=\dimen149
-\lineht@=\dimen150
-\@envbody=\toks22
+\c@parentequation=\count185
+\dspbrk@lvl=\count186
+\tag@help=\toks18
+\row@=\count187
+\column@=\count188
+\maxfields@=\count189
+\andhelp@=\toks19
+\eqnshift@=\dimen141
+\alignsep@=\dimen142
+\tagshift@=\dimen143
+\tagwidth@=\dimen144
+\totwidth@=\dimen145
+\lineht@=\dimen146
+\@envbody=\toks20
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks23
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+(D:\Programy\MikTex\tex/latex/pdfpages\pdfpages.sty
 Package: pdfpages 2021/03/06 v0.5t Insert pages of external PDF documents (AM)
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
-Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+(D:\Programy\MikTex\tex/latex/base\ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+(D:\Programy\MikTex\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count271
-\calc@Bcount=\count272
-\calc@Adimen=\dimen151
-\calc@Bdimen=\dimen152
+\calc@Acount=\count190
+\calc@Bcount=\count191
+\calc@Adimen=\dimen147
+\calc@Bdimen=\dimen148
 \calc@Askip=\skip52
 \calc@Bskip=\skip53
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count273
+\calc@Ccount=\count192
 \calc@Cskip=\skip54
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
-Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
-\ESO@tempdima=\dimen153
-\ESO@tempdimb=\dimen154
+(D:\Programy\MikTex\tex/latex/eso-pic\eso-pic.sty
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+LaTeX Warning: You have requested release `2020-10-01' of LaTeX,
+               but only release `2020-02-02' is available.
+
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen149
+\ESO@tempdimb=\dimen150
+! Undefined control sequence.
+<argument> \nointerlineskip \AddToHook 
+                                       {shipout/background}{\put (0,\ESO@yof...
+l.188 }
+       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.188 }
+       
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+<argument> \ESO@yoffsetI 
+                         
+l.188 }
+       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ... \ESO@HookIIBG \@empty }}\AddToHook 
+                                                  {shipout/foreground}{\put ...
+l.188 }
+       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \ESO@yoffsetI 
+                         
+l.188 }
+       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+(D:\Programy\MikTex\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+(D:\Programy\MikTex\tex/latex/graphics-cfg\color.cfg
+Overfull \hbox (121.00641pt too wide) in paragraph at lines 188--2
+[]\T1/cmr/m/n/10.95 shipout/background[]shipout/foreground[]                   
+                                                                               
+                 
+ []
+
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -182,31 +250,24 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ))
-\AM@pagewidth=\dimen155
-\AM@pageheight=\dimen156
-\AM@fboxrule=\dimen157
-
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
+\AM@pagewidth=\dimen151
+\AM@pageheight=\dimen152
+\AM@fboxrule=\dimen153
+ (D:\Programy\MikTex\tex/latex/pdfpages\pppdftex.def
 File: pppdftex.def 2021/03/06 v0.5t Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count274
-\AM@pagebox=\box52
-\AM@global@opts=\toks24
-\AM@pagecnt=\count275
-\AM@toc@title=\toks25
-\c@AM@survey=\count276
-\AM@templatesizebox=\box53
+\pdfpages@includegraphics@status=\count193
+\AM@pagebox=\box47
+\AM@global@opts=\toks22
+\AM@pagecnt=\count194
+\AM@toc@title=\toks23
+\c@AM@survey=\count195
+\AM@templatesizebox=\box48
 )
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 13
-.
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ppl.fd
-File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
-)
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
-tex.def
-File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count277
-\l__pdf_internal_box=\box54
+(D:\Programy\MikTex\tex/latex/l3backend\l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count196
+\l__pdf_internal_box=\box49
 ) (U2_TZ.aux)
 \openout1 = `U2_TZ.aux'.
 
@@ -224,86 +285,84 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 13
+.
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
-ii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count278
-\scratchdimen=\dimen158
-\scratchbox=\box55
-\nofMPsegments=\count279
-\nofMParguments=\count280
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count281
-\MPscratchDim=\dimen159
-\MPnumerator=\count282
-\makeMPintoPDFobject=\count283
-\everyMPtoPDFconversion=\toks27
+(D:\Programy\MikTex\tex/latex/psnfss\t1ppl.fd
+File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
-ase.sty
+(D:\Programy\MikTex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count197
+\scratchdimen=\dimen154
+\scratchbox=\box50
+\nofMPsegments=\count198
+\nofMParguments=\count199
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count266
+\MPscratchDim=\dimen155
+\MPnumerator=\count267
+\makeMPintoPDFobject=\count268
+\everyMPtoPDFconversion=\toks25
+) (D:\Programy\MikTex\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
-fg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
-))
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
-Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+(D:\Programy\MikTex\tex/latex/pdflscape\pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(D:\Programy\MikTex\tex/generic/iftex\iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+)
+(D:\Programy\MikTex\tex/latex/graphics\lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-)
-[1
+) [1
 
-{C:/Users/monik/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (U2_TZ.toc
+{C:/Users/Marek/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [1] (U2_TZ.
+toc
 LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 6
 .
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ppl.fd
+(D:\Programy\MikTex\tex/latex/psnfss\ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
 6.
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlzplm.fd
+(D:\Programy\MikTex\tex/latex/psnfss\omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
 6.
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omszplm.fd
+(D:\Programy\MikTex\tex/latex/psnfss\omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
 6.
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxzplm.fd
+(D:\Programy\MikTex\tex/latex/psnfss\omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
 6.
 
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1zplm.fd
+(D:\Programy\MikTex\tex/latex/psnfss\ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 ))
 \tf@toc=\write3
 \openout3 = `U2_TZ.toc'.
 
-
-[1]
+ [1]
 Overfull \hbox (1.9958pt too wide) in paragraph at lines 94--95
 \T1/ppl/m/n/10.95 vexní obálky. Hlavní sm¥ry bu-dov bu-dou ur-£eny me-to-dami M
 i-ni-mum Area
  []
 
-<adkcv2.pdf, id=10, 614.295pt x 794.97pt>
+<adkcv2.pdf, id=14, 614.295pt x 794.97pt>
 File: adkcv2.pdf Graphic file (type pdf)
 <use adkcv2.pdf>
 Package pdftex.def Info: adkcv2.pdf  used on input line 102.
@@ -312,7 +371,7 @@ File: adkcv2.pdf Graphic file (type pdf)
 <use adkcv2.pdf>
 Package pdftex.def Info: adkcv2.pdf  used on input line 102.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-<adkcv2.pdf, id=13, page=1, 614.295pt x 794.97pt>
+<adkcv2.pdf, id=17, page=1, 614.295pt x 794.97pt>
 File: adkcv2.pdf Graphic file (type pdf)
 <use adkcv2.pdf, page 1>
 Package pdftex.def Info: adkcv2.pdf , page1 used on input line 102.
@@ -332,15 +391,10 @@ File: adkcv2.pdf Graphic file (type pdf)
 <use adkcv2.pdf, page 1>
 Package pdftex.def Info: adkcv2.pdf , page1 used on input line 102.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
-File: adkcv2.pdf Graphic file (type pdf)
-<use adkcv2.pdf, page 1>
-Package pdftex.def Info: adkcv2.pdf , page1 used on input line 102.
-(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [3 <./adkcv2.pdf>]
+ [3]
 LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
 16.
-
-(C:\Users\monik\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ppl.fd
+ (D:\Programy\MikTex\tex/latex/psnfss\ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
 Overfull \hbox (1.24712pt too wide) in paragraph at lines 123--124
@@ -355,176 +409,205 @@ Overfull \hbox (0.32199pt too wide) in paragraph at lines 135--136
  []
 
 [4] [5] [6] [7]
-Overfull \hbox (2.53493pt too wide) in paragraph at lines 279--280
+<images/U2_problem_pocatek.png, id=43, 462.528pt x 128.27925pt>
+File: images/U2_problem_pocatek.png Graphic file (type png)
+<use images/U2_problem_pocatek.png>
+Package pdftex.def Info: images/U2_problem_pocatek.png  used on input line 275.
+
+(pdftex.def)             Requested size: 462.52686pt x 128.27893pt.
+
+Overfull \hbox (102.52686pt too wide) in paragraph at lines 275--276
+ [][] 
+ []
+
+[8 <./images/U2_problem_pocatek.png>]
+<images/U2_problem_meritko1.png, id=49, 448.67625pt x 131.2905pt>
+File: images/U2_problem_meritko1.png Graphic file (type png)
+<use images/U2_problem_meritko1.png>
+Package pdftex.def Info: images/U2_problem_meritko1.png  used on input line 287
+.
+(pdftex.def)             Requested size: 448.67516pt x 131.29016pt.
+
+Overfull \hbox (88.67516pt too wide) in paragraph at lines 287--288
+ [][] 
+ []
+
+<images/U2_problem_meritko2.png, id=50, 231.86626pt x 148.75575pt>
+File: images/U2_problem_meritko2.png Graphic file (type png)
+<use images/U2_problem_meritko2.png>
+Package pdftex.def Info: images/U2_problem_meritko2.png  used on input line 296
+.
+(pdftex.def)             Requested size: 231.86568pt x 148.75537pt.
+[9 <./images/U2_problem_meritko1.png> <./images/U2_problem_meritko2.png>]
+<images/U2_problem_transformace.png, id=56, 295.1025pt x 154.77824pt>
+File: images/U2_problem_transformace.png Graphic file (type png)
+<use images/U2_problem_transformace.png>
+Package pdftex.def Info: images/U2_problem_transformace.png  used on input line
+ 313.
+(pdftex.def)             Requested size: 295.10176pt x 154.77786pt.
+
+[10 <./images/U2_problem_transformace.png>]
+Overfull \hbox (2.53493pt too wide) in paragraph at lines 333--334
 []\T1/ppl/m/n/10.95 Vrcholy po-ly-gon· jsou na-£í-tány po-stupn¥ °á-dek po °ádk
 u, p°i-£emº musí
  []
 
-[8]
-<images/vstup_data_U2.jpg, id=102, 151.767pt x 122.25674pt>
+<images/vstup_data_U2.jpg, id=61, 151.767pt x 122.25674pt>
 File: images/vstup_data_U2.jpg Graphic file (type jpg)
 <use images/vstup_data_U2.jpg>
-Package pdftex.def Info: images/vstup_data_U2.jpg  used on input line 290.
+Package pdftex.def Info: images/vstup_data_U2.jpg  used on input line 344.
 (pdftex.def)             Requested size: 151.76662pt x 122.25644pt.
- [9 <./images/vstup_data_U2.jpg>]
-<images/U2_aplikace_ConvexHull.png, id=106, 894.34125pt x 600.44325pt>
+[11
+
+ <./images/vstup_data_U2.jpg>]
+<images/U2_aplikace_ConvexHull.png, id=66, 894.34125pt x 600.44325pt>
 File: images/U2_aplikace_ConvexHull.png Graphic file (type png)
 <use images/U2_aplikace_ConvexHull.png>
 Package pdftex.def Info: images/U2_aplikace_ConvexHull.png  used on input line 
-310.
+364.
 (pdftex.def)             Requested size: 357.73016pt x 240.17305pt.
-<images/U2_aplikace_MAER.png, id=108, 886.512pt x 599.23875pt>
+<images/U2_aplikace_MAER.png, id=67, 886.512pt x 599.23875pt>
 File: images/U2_aplikace_MAER.png Graphic file (type png)
 <use images/U2_aplikace_MAER.png>
-Package pdftex.def Info: images/U2_aplikace_MAER.png  used on input line 327.
+Package pdftex.def Info: images/U2_aplikace_MAER.png  used on input line 381.
 (pdftex.def)             Requested size: 354.59851pt x 239.69125pt.
-<images/U2_aplikace_WallAvarage.png, id=109, 887.11424pt x 600.44325pt>
+<images/U2_aplikace_WallAvarage.png, id=68, 887.11424pt x 600.44325pt>
 File: images/U2_aplikace_WallAvarage.png Graphic file (type png)
 <use images/U2_aplikace_WallAvarage.png>
 Package pdftex.def Info: images/U2_aplikace_WallAvarage.png  used on input line
- 333.
+ 387.
 (pdftex.def)             Requested size: 354.83942pt x 240.17305pt.
-<images/U2_aplikace_LongestEdge.png, id=110, 889.52325pt x 600.44325pt>
+<images/U2_aplikace_LongestEdge.png, id=69, 889.52325pt x 600.44325pt>
 File: images/U2_aplikace_LongestEdge.png Graphic file (type png)
 <use images/U2_aplikace_LongestEdge.png>
 Package pdftex.def Info: images/U2_aplikace_LongestEdge.png  used on input line
- 339.
+ 393.
 (pdftex.def)             Requested size: 355.803pt x 240.17305pt.
-<images/U2_aplikace_WeightedBisector.png, id=111, 888.921pt x 599.23875pt>
+<images/U2_aplikace_WeightedBisector.png, id=70, 888.921pt x 599.23875pt>
 File: images/U2_aplikace_WeightedBisector.png Graphic file (type png)
 <use images/U2_aplikace_WeightedBisector.png>
 Package pdftex.def Info: images/U2_aplikace_WeightedBisector.png  used on input
- line 344.
+ line 398.
 (pdftex.def)             Requested size: 355.5621pt x 239.69125pt.
- [10
+ [12
 
- <./images/U2_aplikace_ConvexHull.png>] [11 <./images/U2_aplikace_MAER.png> <./
-images/U2_aplikace_WallAvarage.png>]
-[12 <./images/U2_aplikace_LongestEdge.png> <./images/U2_aplikace_WeightedBisect
+ <./images/U2_aplikace_ConvexHull.png>]
+[13 <./images/U2_aplikace_MAER.png> <./images/U2_aplikace_WallAvarage.png>]
+[14 <./images/U2_aplikace_LongestEdge.png> <./images/U2_aplikace_WeightedBisect
 or.png>]
-<images/U2_aplikace_uvodni_okno.jpg, id=127, 851.5815pt x 599.23875pt>
+<images/U2_aplikace_uvodni_okno.jpg, id=85, 851.5815pt x 599.23875pt>
 File: images/U2_aplikace_uvodni_okno.jpg Graphic file (type jpg)
 <use images/U2_aplikace_uvodni_okno.jpg>
 Package pdftex.def Info: images/U2_aplikace_uvodni_okno.jpg  used on input line
- 354.
+ 408.
 (pdftex.def)             Requested size: 340.62656pt x 239.69125pt.
 
-Overfull \hbox (2.51944pt too wide) in paragraph at lines 370--371
+Overfull \hbox (2.51944pt too wide) in paragraph at lines 424--425
 []\T1/ppl/m/n/10.95 double get2LinesAngle(QPoint &p1, QPoint &p2, QPoint &p3, Q
 Point
  []
 
 
-Overfull \hbox (9.45891pt too wide) in paragraph at lines 372--373
+Overfull \hbox (9.45891pt too wide) in paragraph at lines 426--427
 []\T1/ppl/m/n/10.95 double get-Point-Li-ne-Distance(QPointF &a, QPointF &p1, QP
 ointF &p2); 
  []
 
-[13
+[15
 
  <./images/U2_aplikace_uvodni_okno.jpg>]
-Overfull \hbox (40.08684pt too wide) in paragraph at lines 377--378
+Overfull \hbox (40.08684pt too wide) in paragraph at lines 431--432
 []\T1/ppl/m/n/10.95 std::tuple<std::vector<QPointF>, double> min-Ma-x-Box(std::
 vector <QPointF>
  []
 
 
-Overfull \hbox (19.06186pt too wide) in paragraph at lines 378--379
+Overfull \hbox (19.06186pt too wide) in paragraph at lines 432--433
 []\T1/ppl/m/n/10.95 QPolygonF mi-nA-re-a-Enc-lo-sin-gRectan-gle(std::vector <QP
 ointF> &points); 
  []
 
 
-Overfull \hbox (4.6742pt too wide) in paragraph at lines 383--384
+Overfull \hbox (4.6742pt too wide) in paragraph at lines 437--438
 []\T1/ppl/m/n/10.95 std::vector <QPointF> re-si-ze-Rectan-gle(std::vector <QPoi
 ntF> &points,
  []
 
 
-LaTeX Warning: Reference `WN:omega_i' on page 14 undefined on input line 387.
+LaTeX Warning: Reference `WN:omega_i' on page 16 undefined on input line 441.
 
-[14]
-Overfull \hbox (12.34103pt too wide) in paragraph at lines 413--414
+[16]
+Overfull \hbox (12.34103pt too wide) in paragraph at lines 467--468
  \T1/ppl/b/n/10.95 std::vector <QPointF> ro-tate(std::vector <QPointF> &points,
  double sigma);[]
  []
 
 
-Overfull \hbox (21.50635pt too wide) in paragraph at lines 416--417
+Overfull \hbox (21.50635pt too wide) in paragraph at lines 470--471
  \T1/ppl/b/n/10.95 std::tuple<std::vector<QPointF>, double> min-Ma-x-Box(std::v
 ector <QPointF>
  []
 
-[15]
-Overfull \hbox (2.26584pt too wide) in paragraph at lines 419--420
+[17]
+Overfull \hbox (2.26584pt too wide) in paragraph at lines 473--474
  \T1/ppl/b/n/10.95 QPo-ly-gonF mi-nA-re-a-Enc-lo-sin-gRectan-gle(std::vector <Q
 PointF> &points);[]
  []
 
 
-Overfull \hbox (0.74463pt too wide) in paragraph at lines 428--429
+Overfull \hbox (0.74463pt too wide) in paragraph at lines 482--483
 \T1/ppl/m/n/10.95 li-zuje po-ly-gon, je-hoº hlavní sm¥r je ur-£en me-to-dou Wei
 -gh-ted Bi-s-ec-tor, která
  []
 
 
-Overfull \hbox (14.24828pt too wide) in paragraph at lines 431--432
+Overfull \hbox (14.24828pt too wide) in paragraph at lines 485--486
 \T1/ppl/m/n/10.95 mocí L'Hullierova vzorce. Vstupní hod-no-tou je vek-tor da-to
 -vého typu QPointF,
  []
 
 
-Overfull \hbox (39.74858pt too wide) in paragraph at lines 434--435
+Overfull \hbox (39.74858pt too wide) in paragraph at lines 488--489
  \T1/ppl/b/n/10.95 std::vector <QPointF> re-si-ze-Rectan-gle(std::vector <QPoin
 tF> &points, std::vector
  []
 
-[16]
-Overfull \hbox (5.61566pt too wide) in paragraph at lines 461--463
+[18]
+Overfull \hbox (5.61566pt too wide) in paragraph at lines 515--517
 \T1/ppl/m/n/10.95 Funkce na-sta-vuje gra-fické atri-buty vy-kres-lo-va-ných ob-
 jekt· a kreslí na plátno
  []
 
-[17]
-Overfull \hbox (76.30783pt too wide) in paragraph at lines 469--470
+[19]
+Overfull \hbox (76.30783pt too wide) in paragraph at lines 523--524
 \T1/ppl/m/n/10.95 vek-tor po-ly-gon· na-£te-ných z tex-to-vého sou-boru  ná-vr
 a-tový typ je std::vector<QPolygon>,
  []
 
-[18] [19] (U2_TZ.aux)
+[20] [21] (U2_TZ.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4803 strings out of 478927
- 71910 string characters out of 2852535
- 388193 words of memory out of 3000000
- 22551 multiletter control sequences out of 15000+600000
- 438594 words of font info for 88 fonts, out of 8000000 for 9000
+ 4362 strings out of 481556
+ 58781 string characters out of 2927850
+ 312910 words of memory out of 3000000
+ 19492 multiletter control sequences out of 15000+200000
+ 569462 words of font info for 89 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,17n,75p,833b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
-{C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:
-/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10
-.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmex10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi7.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/monik/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/monik/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/monik/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/monik/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/User
-s/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-<C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr
-.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/
-fplmri.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palati
-no/uplb8a.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/urw/pal
-atino/uplr8a.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/urw/
-palatino/uplri8a.pfb>
-Output written on U2_TZ.pdf (20 pages, 457762 bytes).
+ 40i,8n,45p,833b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/Programy/MikTex/fonts/enc/dvips/base/8r.enc} <C:\Users\Marek\AppData\Loca
+l\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk><D:/Programy/MikTex
+/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Programy/MikTex/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><D:/Programy/MikTex/fonts/type1/public/amsfonts/cm/cms
+y10.pfb><D:/Programy/MikTex/fonts/type1/public/mathpazo/fplmr.pfb><D:/Programy/
+MikTex/fonts/type1/public/mathpazo/fplmri.pfb><D:/Programy/MikTex/fonts/type1/u
+rw/palatino/uplb8a.pfb><D:/Programy/MikTex/fonts/type1/urw/palatino/uplr8a.pfb>
+<D:/Programy/MikTex/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on U2_TZ.pdf (23 pages, 397478 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
+ 156 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

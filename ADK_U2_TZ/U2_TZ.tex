@@ -262,11 +262,65 @@
 		%	PROBLEMATICKÉ SITUACE
 		%----------------------------------------------------------------------------------------
 		
-		\section{Problematické situace}
-		Během práce na úloze se vyskytly problémy při načítání dat, které byly uloženy v souřadních S-JTSK, z něhož je bylo nutné transformovat do souřadnic plátna pro vykreslování. 
-		
-		Prvním krokem byla změna měřítka souřadnic a zaměnění souřadnice \textit{x} za \textit{y} a naopak, následovalo získání minimálních a maximálních souřadnic \textit{x} a \textit{y} bodů množiny \textit{S}. Z vypočtených minim a maxim se následně vypočítal rozsah mezi těmito souřadnicemi, kterým se vydělil rozsah plátna, čímž se získalo měřítko, jímž se následně souřadnice vynásobily.
-		
+\section{Problematické situace}
+
+\subsection{Transformace souřadnic}
+Abychom mohli v oknu aplikace zobrazovat budovy, jejíž lomové body jsou určeny v souřadnicovém systému S-JTSK, bylo nutné souřadnic převést do souřadnicového systému widgetu. 
+
+\subsubsection{Počátek}
+Pro určení souřadnic počátku bylo nejdříve nutno zjistit maximální hodnotu souřadnice Y a minimální hodnotu souřadnice X v souřadnicovém systému S-JTSK. 
+
+\begin{figure}[htbh]
+	\centering
+	\includegraphics[scale=1]{images/U2_problem_pocatek.png} 
+	\caption{Výpočet souřadnic počátku}
+	\label{fig:problem_origin}
+\end{figure} 
+
+\subsubsection{Měřítko}
+Abychom zobrazili pouze území, kde se polygony nachází, bylo nutné také zavést měřítko.
+
+Měřítko jsme definovali jako podíl šířky/výšky widgetu ku rozdílu maximální a minimální souřadnici v dané ose. Bylo tedy nutné zjistit také minimální hodnotu souřadnice Y a maximální hodnotu souřadnice X.
+
+\begin{figure}[htbh]
+	\centering
+	\includegraphics[scale=1]{images/U2_problem_meritko1.png} 
+	\caption{Výpočet Ymin a Xmax}
+	\label{fig:problem_scale1}
+\end{figure} 
+
+ Měřítko se následně vypočetlo v obou osách, a abychom zabránili tomu, že transformované souřadnice budou mít vyšší hodnotu, než je rozměr widgetu, použilo se měřítko s menším maximálním souřadnicovým rozdílem.
+
+\begin{figure}[htbh]
+	\centering
+	\includegraphics[scale=1]{images/U2_problem_meritko2.png} 
+	\caption{Výpočet měřítka}
+	\label{fig:problem_scale2}
+\end{figure} 
+
+\subsubsection{Transformace}
+Souřadnice v souřadnicovém systému widgetu byly definovány následujícími vzorci.
+
+\begin{equation}
+X_{W_{i}}=-k *\left(Y_{S-J T S K_{i}}-Y_{S-J T S K_{\max }}\right)
+\end{equation}
+\begin{equation}
+Y_{W_{i}}=k *\left(X_{S-J T S K_{i}}-X_{S-J T S K_{\min }}\right)
+\end{equation}
+
+\begin{figure}[htbh]
+	\centering
+	\includegraphics[scale=1]{images/U2_problem_transformace.png} 
+	\caption{Transformace souřadnic}
+	\label{fig:problem_transformation}
+\end{figure} 
+
+
+\subsection{Načítání souřadnic s reálným číslem}
+V průběhu práce jsme narazili na problém, kdy ačkoliv jsme souřadnice přetypovali ze stringu na double, stála se nám načítaly souřadnice typu integer. Zaokrouhlení souřadnic na metry následně vedlo k viditelné destrukci načtených polygonů. Problém byl v tom, že souřadnice QPointu jsou definovány typem integer. Proto byly všechny objekty datového typu QPoint nahrazeny typem QpointF, jehož souřadnice jsou typu float.
+
+
+\clearpage
 		
 		%----------------------------------------------------------------------------------------
 		%	VSTUPNÍ DATA
