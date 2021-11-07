@@ -42,7 +42,6 @@ void Draw::mousePressEvent(QMouseEvent *event)
     //Get cursor coordinates
     int x = event->pos().x();
     int y = event->pos().y();
-
 }
 
 void Draw::clear()
@@ -74,8 +73,6 @@ void Draw::loadData(QString &file_name)
             double y = line.split(" ")[1].toDouble();
             double x = line.split(" ")[2].toDouble();
 
-           // std::cout << "y: "<< y << std::endl;
-
             if (id == 1)
             {
                 if (polygon.empty() == false)
@@ -101,16 +98,17 @@ void Draw::loadData(QString &file_name)
             QPointF pxmin = *std::min_element(polygon.begin(), polygon.end(), sortByX());
             double xx = pxmin.x();
 
+            if (yy > y_max)
+                y_max = yy;
+            if (xx < x_min)
+                x_min = xx;
+
             //Additionaly find min Y and max X to determine the scale in both directions
             QPointF pymin = *std::min_element(polygon.begin(), polygon.end(), sortByY());
             double yy_ = pymin.y();
             QPointF pxmax = *std::max_element(polygon.begin(), polygon.end(), sortByX());
             double xx_ = pxmax.x();
 
-            if (yy > y_max)
-                y_max = yy;
-            if (xx < x_min)
-                x_min = xx;
             if (yy_ < y_min)
                 y_min = yy_;
             if (xx_ > x_max)
@@ -120,6 +118,7 @@ void Draw::loadData(QString &file_name)
         //Save polygon to the vector of QPolygonFs
         buildings_.push_back(polygon);
     }
+
     //Compute scales to zoom in in canvas
     double canvas_weight = 952.0;
     double canvas_height = 748.0;
@@ -133,29 +132,15 @@ void Draw::loadData(QString &file_name)
     else
         k = canvas_height/dx;
 
-    /*double k_w = canvas_weight/fabs(x_max-x_min);
-    double k_h = canvas_height/fabs(y_max-y_min);
-    double k = (k_w + k_h)/2;*/
-
-    /*std::cout << "k: "<< k << std::endl;
-    std::cout << "x_max: "<< x_max << std::endl;
-    std::cout << "y_min: "<< y_min << std::endl;
-    std::cout << "dy: "<< fabs(y_max-y_min) << std::endl;
-    std::cout << "dx: "<< fabs(x_max-x_min) << std::endl;*/
-
-    //Trosform coordinates from JTSK to canvas
+    //Transform coordinates from JTSK to canvas
     for (int unsigned i = 0; i < buildings_.size(); i++)
     {
         QPolygonF pol = buildings_[i];
         for (int j = 0; j < pol.size(); j++)
         {
-            //std::cout << "y: "<< pol[j].y() << "x: "<< pol[j].x() << std::endl;
             double temp = pol[j].x();
             pol[j].setX(-k*(pol[j].y()-y_max));
             pol[j].setY(k*(temp-x_min));
-
-            /*std::cout << "x: "<< pol[j].x() << std::endl;
-            std::cout << "y: "<< pol[j].y() << std::endl;*/
         }
 
         buildings.push_back(pol);
