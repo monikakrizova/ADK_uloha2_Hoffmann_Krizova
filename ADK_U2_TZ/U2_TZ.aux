@@ -18,11 +18,51 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Metoda Weighted Bisector}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5}Problematické situace}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6}Vstupní data}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Výstupní data}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}Dokumentace}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Třída Algorithms}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{QPolygonF cHull (std::vector <QPointF> \&points)}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{QPolygonF qHull (std::vector <QPointF> \&points)}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{void qHullRecursive(int r, int s, std::vector<QPointF> \&points, QPolygonF \&ch)}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}Závěr}{9}{}\protected@file@percent }
-\gdef \@abspage@last{10}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Špagetový model vstupního souboru}}{9}{}\protected@file@percent }
+\newlabel{fig:vstup.}{{1}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Výstupní data}{10}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Konvexní obálka nad polygony}}{10}{}\protected@file@percent }
+\newlabel{fig:app_convexHull}{{2}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Minimum Area Enclosing Rectangle}}{11}{}\protected@file@percent }
+\newlabel{fig:app_MAER}{{3}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Wall Avarage}}{11}{}\protected@file@percent }
+\newlabel{fig:app_WallAvarage}{{4}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Longest Edge}}{12}{}\protected@file@percent }
+\newlabel{fig:app_LongestEdge}{{5}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Weighted Bisector}}{12}{}\protected@file@percent }
+\newlabel{fig:app_WeightedBisector}{{6}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Printscreen vytvořené aplikace}{13}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Úvodní okno aplikace}}{13}{}\protected@file@percent }
+\newlabel{fig:uvodni_okno}{{7}{13}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Dokumentace}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Třída Algorithms}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{double get2LinesAngle(QPoint \&p1, QPoint \&p2, QPoint \&p3, QPoint \&p4);}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{int getPointLinePosition(QPoint \&a, QPoint \&p1, QPoint \&p2);}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{double getPointLineDistance(QPointF \&a, QPointF \&p1, QPointF \&p2);}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Třída Algorithms}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{QPolygonF cHull (std::vector <QPointF> \&points)}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{QPolygonF qHull (std::vector <QPointF> \&points)}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{void qHullRecursive(int r, int s, std::vector<QPointF> \&points, QPolygonF \&ch)}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{std::vector <QPointF> rotate(std::vector <QPointF> \&points, double sigma);}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{std::tuple<std::vector<QPointF>, double> minMaxBox(std::vector <QPointF> \&points);}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{QPolygonF minAreaEnclosingRectangle(std::vector <QPointF> \&points);}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{QPolygonF wallAverage(std::vector <QPointF> \&points);}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{QPolygonF longestEdge(std::vector <QPointF> \&points);}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{QPolygonF weightedBisector(std::vector <QPointF> \&points);}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{double LH(std::vector <QPointF> \&points);}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{std::vector <QPointF> resizeRectangle(std::vector <QPointF> \&points, std::vector <QPointF> \&er);}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Třída Draw}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{• void paintEvent(QPaintEvent *event);}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{void clear();}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{std::vector<QPolygonF> getPolygons()\{return buildings;\}}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{void setCh(std::vector <QPolygonF> \&ch\_\{chs = ch\_;\}}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{void setEr(std::vector <QPolygonF> \&er\_)\{ers = er\_;\}}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{void loadData(QString \&file\_name);}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Třída SortByX}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Třída SortByY}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.6}Třída Widget}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ void on\_pushButtonClear\_clicked();}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ void on\_pushButtonAnalyze\_clicked();}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{void on\_pushButtonLoad\_clicked();}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Závěr}{19}{}\protected@file@percent }
+\gdef \@abspage@last{20}

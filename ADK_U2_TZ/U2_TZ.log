@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.11.6)  7 NOV 2021 19:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.11.6)  7 NOV 2021 23:20
 entering extended mode
 **./U2_TZ.tex
 (U2_TZ.tex
@@ -354,36 +354,177 @@ Overfull \hbox (0.32199pt too wide) in paragraph at lines 135--136
 ¥r na-to-£ení bu-dovy,
  []
 
-[4] [5] [6] [7] [8] [9] (U2_TZ.aux) ) 
+[4] [5] [6] [7]
+Overfull \hbox (2.53493pt too wide) in paragraph at lines 279--280
+[]\T1/ppl/m/n/10.95 Vrcholy po-ly-gon· jsou na-£í-tány po-stupn¥ °á-dek po °ádk
+u, p°i-£emº musí
+ []
+
+[8]
+<images/vstup_data_U2.jpg, id=102, 151.767pt x 122.25674pt>
+File: images/vstup_data_U2.jpg Graphic file (type jpg)
+<use images/vstup_data_U2.jpg>
+Package pdftex.def Info: images/vstup_data_U2.jpg  used on input line 290.
+(pdftex.def)             Requested size: 151.76662pt x 122.25644pt.
+ [9 <./images/vstup_data_U2.jpg>]
+<images/U2_aplikace_ConvexHull.png, id=106, 894.34125pt x 600.44325pt>
+File: images/U2_aplikace_ConvexHull.png Graphic file (type png)
+<use images/U2_aplikace_ConvexHull.png>
+Package pdftex.def Info: images/U2_aplikace_ConvexHull.png  used on input line 
+310.
+(pdftex.def)             Requested size: 357.73016pt x 240.17305pt.
+<images/U2_aplikace_MAER.png, id=108, 886.512pt x 599.23875pt>
+File: images/U2_aplikace_MAER.png Graphic file (type png)
+<use images/U2_aplikace_MAER.png>
+Package pdftex.def Info: images/U2_aplikace_MAER.png  used on input line 327.
+(pdftex.def)             Requested size: 354.59851pt x 239.69125pt.
+<images/U2_aplikace_WallAvarage.png, id=109, 887.11424pt x 600.44325pt>
+File: images/U2_aplikace_WallAvarage.png Graphic file (type png)
+<use images/U2_aplikace_WallAvarage.png>
+Package pdftex.def Info: images/U2_aplikace_WallAvarage.png  used on input line
+ 333.
+(pdftex.def)             Requested size: 354.83942pt x 240.17305pt.
+<images/U2_aplikace_LongestEdge.png, id=110, 889.52325pt x 600.44325pt>
+File: images/U2_aplikace_LongestEdge.png Graphic file (type png)
+<use images/U2_aplikace_LongestEdge.png>
+Package pdftex.def Info: images/U2_aplikace_LongestEdge.png  used on input line
+ 339.
+(pdftex.def)             Requested size: 355.803pt x 240.17305pt.
+<images/U2_aplikace_WeightedBisector.png, id=111, 888.921pt x 599.23875pt>
+File: images/U2_aplikace_WeightedBisector.png Graphic file (type png)
+<use images/U2_aplikace_WeightedBisector.png>
+Package pdftex.def Info: images/U2_aplikace_WeightedBisector.png  used on input
+ line 344.
+(pdftex.def)             Requested size: 355.5621pt x 239.69125pt.
+ [10
+
+ <./images/U2_aplikace_ConvexHull.png>] [11 <./images/U2_aplikace_MAER.png> <./
+images/U2_aplikace_WallAvarage.png>]
+[12 <./images/U2_aplikace_LongestEdge.png> <./images/U2_aplikace_WeightedBisect
+or.png>]
+<images/U2_aplikace_uvodni_okno.jpg, id=127, 851.5815pt x 599.23875pt>
+File: images/U2_aplikace_uvodni_okno.jpg Graphic file (type jpg)
+<use images/U2_aplikace_uvodni_okno.jpg>
+Package pdftex.def Info: images/U2_aplikace_uvodni_okno.jpg  used on input line
+ 354.
+(pdftex.def)             Requested size: 340.62656pt x 239.69125pt.
+
+Overfull \hbox (2.51944pt too wide) in paragraph at lines 370--371
+[]\T1/ppl/m/n/10.95 double get2LinesAngle(QPoint &p1, QPoint &p2, QPoint &p3, Q
+Point
+ []
+
+
+Overfull \hbox (9.45891pt too wide) in paragraph at lines 372--373
+[]\T1/ppl/m/n/10.95 double get-Point-Li-ne-Distance(QPointF &a, QPointF &p1, QP
+ointF &p2); 
+ []
+
+[13
+
+ <./images/U2_aplikace_uvodni_okno.jpg>]
+Overfull \hbox (40.08684pt too wide) in paragraph at lines 377--378
+[]\T1/ppl/m/n/10.95 std::tuple<std::vector<QPointF>, double> min-Ma-x-Box(std::
+vector <QPointF>
+ []
+
+
+Overfull \hbox (19.06186pt too wide) in paragraph at lines 378--379
+[]\T1/ppl/m/n/10.95 QPolygonF mi-nA-re-a-Enc-lo-sin-gRectan-gle(std::vector <QP
+ointF> &points); 
+ []
+
+
+Overfull \hbox (4.6742pt too wide) in paragraph at lines 383--384
+[]\T1/ppl/m/n/10.95 std::vector <QPointF> re-si-ze-Rectan-gle(std::vector <QPoi
+ntF> &points,
+ []
+
+
+LaTeX Warning: Reference `WN:omega_i' on page 14 undefined on input line 387.
+
+[14]
+Overfull \hbox (12.34103pt too wide) in paragraph at lines 413--414
+ \T1/ppl/b/n/10.95 std::vector <QPointF> ro-tate(std::vector <QPointF> &points,
+ double sigma);[]
+ []
+
+
+Overfull \hbox (21.50635pt too wide) in paragraph at lines 416--417
+ \T1/ppl/b/n/10.95 std::tuple<std::vector<QPointF>, double> min-Ma-x-Box(std::v
+ector <QPointF>
+ []
+
+[15]
+Overfull \hbox (2.26584pt too wide) in paragraph at lines 419--420
+ \T1/ppl/b/n/10.95 QPo-ly-gonF mi-nA-re-a-Enc-lo-sin-gRectan-gle(std::vector <Q
+PointF> &points);[]
+ []
+
+
+Overfull \hbox (0.74463pt too wide) in paragraph at lines 428--429
+\T1/ppl/m/n/10.95 li-zuje po-ly-gon, je-hoº hlavní sm¥r je ur-£en me-to-dou Wei
+-gh-ted Bi-s-ec-tor, která
+ []
+
+
+Overfull \hbox (14.24828pt too wide) in paragraph at lines 431--432
+\T1/ppl/m/n/10.95 mocí L'Hullierova vzorce. Vstupní hod-no-tou je vek-tor da-to
+-vého typu QPointF,
+ []
+
+
+Overfull \hbox (39.74858pt too wide) in paragraph at lines 434--435
+ \T1/ppl/b/n/10.95 std::vector <QPointF> re-si-ze-Rectan-gle(std::vector <QPoin
+tF> &points, std::vector
+ []
+
+[16]
+Overfull \hbox (5.61566pt too wide) in paragraph at lines 461--463
+\T1/ppl/m/n/10.95 Funkce na-sta-vuje gra-fické atri-buty vy-kres-lo-va-ných ob-
+jekt· a kreslí na plátno
+ []
+
+[17]
+Overfull \hbox (76.30783pt too wide) in paragraph at lines 469--470
+\T1/ppl/m/n/10.95 vek-tor po-ly-gon· na-£te-ných z tex-to-vého sou-boru  ná-vr
+a-tový typ je std::vector<QPolygon>,
+ []
+
+[18] [19] (U2_TZ.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4740 strings out of 478927
- 69946 string characters out of 2852535
- 388131 words of memory out of 3000000
- 22500 multiletter control sequences out of 15000+600000
- 438053 words of font info for 86 fonts, out of 8000000 for 9000
+ 4803 strings out of 478927
+ 71910 string characters out of 2852535
+ 388193 words of memory out of 3000000
+ 22551 multiletter control sequences out of 15000+600000
+ 438594 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,75p,833b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
-{C:/Users/monik/AppData/Local/Programs/MiK
-TeX/fonts/enc/dvips/base/8r.enc}<C:/Users/monik/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmb10.pfb><C:/Users/monik/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/monik/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/monik/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/mon
-ik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/U
-sers/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pf
-b><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmr9.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmti9.pfb><C:/Users/monik/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/monik/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/monik/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/monik/AppData/Local/
-Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/monik/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on U2_TZ.pdf (10 pages, 225752 bytes).
+{C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:
+/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb10
+.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmex10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmmi7.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/monik/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/monik/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/monik/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/monik/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/User
+s/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+<C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr
+.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/
+fplmri.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palati
+no/uplb8a.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/urw/pal
+atino/uplr8a.pfb><C:/Users/monik/AppData/Local/Programs/MiKTeX/fonts/type1/urw/
+palatino/uplri8a.pfb>
+Output written on U2_TZ.pdf (20 pages, 457762 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
+ 190 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

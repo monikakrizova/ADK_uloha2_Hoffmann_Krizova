@@ -13,10 +13,36 @@
 \contentsline {subsubsection}{\numberline {4.2.4}Metoda Weighted Bisector}{8}{}%
 \contentsline {section}{\numberline {5}Problematické situace}{8}{}%
 \contentsline {section}{\numberline {6}Vstupní data}{8}{}%
-\contentsline {section}{\numberline {7}Výstupní data}{8}{}%
-\contentsline {section}{\numberline {8}Dokumentace}{8}{}%
-\contentsline {subsection}{\numberline {8.1}Třída Algorithms}{8}{}%
-\contentsline {paragraph}{QPolygonF cHull (std::vector <QPointF> \&points)}{8}{}%
-\contentsline {paragraph}{QPolygonF qHull (std::vector <QPointF> \&points)}{9}{}%
-\contentsline {paragraph}{void qHullRecursive(int r, int s, std::vector<QPointF> \&points, QPolygonF \&ch)}{9}{}%
-\contentsline {section}{\numberline {9}Závěr}{9}{}%
+\contentsline {section}{\numberline {7}Výstupní data}{10}{}%
+\contentsline {section}{\numberline {8}Printscreen vytvořené aplikace}{13}{}%
+\contentsline {section}{\numberline {9}Dokumentace}{13}{}%
+\contentsline {subsection}{\numberline {9.1}Třída Algorithms}{13}{}%
+\contentsline {paragraph}{double get2LinesAngle(QPoint \&p1, QPoint \&p2, QPoint \&p3, QPoint \&p4);}{14}{}%
+\contentsline {paragraph}{int getPointLinePosition(QPoint \&a, QPoint \&p1, QPoint \&p2);}{14}{}%
+\contentsline {paragraph}{double getPointLineDistance(QPointF \&a, QPointF \&p1, QPointF \&p2);}{15}{}%
+\contentsline {subsection}{\numberline {9.2}Třída Algorithms}{15}{}%
+\contentsline {paragraph}{QPolygonF cHull (std::vector <QPointF> \&points)}{15}{}%
+\contentsline {paragraph}{QPolygonF qHull (std::vector <QPointF> \&points)}{15}{}%
+\contentsline {paragraph}{void qHullRecursive(int r, int s, std::vector<QPointF> \&points, QPolygonF \&ch)}{15}{}%
+\contentsline {paragraph}{std::vector <QPointF> rotate(std::vector <QPointF> \&points, double sigma);}{15}{}%
+\contentsline {paragraph}{std::tuple<std::vector<QPointF>, double> minMaxBox(std::vector <QPointF> \&points);}{16}{}%
+\contentsline {paragraph}{QPolygonF minAreaEnclosingRectangle(std::vector <QPointF> \&points);}{16}{}%
+\contentsline {paragraph}{QPolygonF wallAverage(std::vector <QPointF> \&points);}{16}{}%
+\contentsline {paragraph}{QPolygonF longestEdge(std::vector <QPointF> \&points);}{16}{}%
+\contentsline {paragraph}{QPolygonF weightedBisector(std::vector <QPointF> \&points);}{16}{}%
+\contentsline {paragraph}{double LH(std::vector <QPointF> \&points);}{16}{}%
+\contentsline {paragraph}{std::vector <QPointF> resizeRectangle(std::vector <QPointF> \&points, std::vector <QPointF> \&er);}{17}{}%
+\contentsline {subsection}{\numberline {9.3}Třída Draw}{17}{}%
+\contentsline {paragraph}{• void paintEvent(QPaintEvent *event);}{17}{}%
+\contentsline {paragraph}{void clear();}{18}{}%
+\contentsline {paragraph}{std::vector<QPolygonF> getPolygons()\{return buildings;\}}{18}{}%
+\contentsline {paragraph}{void setCh(std::vector <QPolygonF> \&ch\_\{chs = ch\_;\}}{18}{}%
+\contentsline {paragraph}{void setEr(std::vector <QPolygonF> \&er\_)\{ers = er\_;\}}{18}{}%
+\contentsline {paragraph}{void loadData(QString \&file\_name);}{18}{}%
+\contentsline {subsection}{\numberline {9.4}Třída SortByX}{18}{}%
+\contentsline {subsection}{\numberline {9.5}Třída SortByY}{18}{}%
+\contentsline {subsection}{\numberline {9.6}Třída Widget}{18}{}%
+\contentsline {paragraph}{ void on\_pushButtonClear\_clicked();}{18}{}%
+\contentsline {paragraph}{ void on\_pushButtonAnalyze\_clicked();}{19}{}%
+\contentsline {paragraph}{void on\_pushButtonLoad\_clicked();}{19}{}%
+\contentsline {section}{\numberline {10}Závěr}{19}{}%

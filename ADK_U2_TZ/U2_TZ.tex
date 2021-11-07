@@ -274,7 +274,27 @@
 		
 		
 		\section{Vstupní data}
+		Polygonová mapa se do projektu nahrává z textového souboru, ve kterém jsou uloženy souřadnice lomových bodů budov v souřadnicovém systému S-JTSK s centimetrovou přesností. Data byla získána ze systému ZABAGED, pomocí QGISu se vyexportovaly souřadnice do csv souboru, jehož formát se pak pomocí jednoduchých funkcí v MS Excel upravil do špagetového modelu. Pro úspěšné načtení souboru musí data splňovat specifický formát, bez něhož nebude zajištěno správné načítání dat.  
 		
+		Vrcholy polygonů jsou načítány postupně řádek po řádku, přičemž musí v nahrávaném souboru platit následující pravidla:    
+		
+		\begin{itemize}
+			\item každý vrchol polygonu je definován na jednotlivém řádku,
+			\item na řádku je pořadí proměnných id >> y >> x   ,  hodnoty jsou od sebe odděleny  jednou mezerou,
+			\item id je identifikátor jednotlivých vrcholů polygonu, x a y jsou souřadnice vrcholů polygonu,    
+			\item nový polygon má vždy hodnotu id prvního vrcholu rovnu 1, od této hodnoty  se  postupně načítají body, a  to až do okamžiku,  kdy program dojde  k dalšímu identifikátoru s označením 1.   
+		\end{itemize}
+		
+		\begin{figure}[htbh]
+			\centering
+			\includegraphics[scale=1]{images/vstup_data_U2.jpg} 
+			\caption{Špagetový model vstupního souboru}
+			\label{fig:vstup.}
+		\end{figure} 
+		
+		Souřadnice byly následně transformovány z S-JTSK do souřadnicového systému widgetu a změněno bylo měřitko tak, aby se zobrazovala oblast se  zobrazovanými polygony s maximálním přiblížením. Tento postup byl již popsán v kapitole 4.
+		
+		\clearpage
 
 		
 		%----------------------------------------------------------------------------------------
@@ -283,13 +303,100 @@
 		
 		\section{Výstupní data}
 		
+		Po načtení souboru lze nad polygony provádět dva druhy operací. Po stisknutí tlačítka \textit{Create convex hull} se vytvoří konvexní obálky nad jednotlivými polygony. V combo boxu lze vybrat, zdali se konvexní obálka vytvoří metodou \textit{Jarvis scan} nebo \textit{Quick hull}. Výsledek obou metod je stejný a zobrazuje ho následující obrázek \ref{fig:app_convexHull}.
+		
+		\begin{figure}[htbh]
+			\centering
+			\includegraphics[scale=0.4]{images/U2_aplikace_ConvexHull.png} 
+			\caption{Konvexní obálka nad polygony}
+			\label{fig:app_convexHull}
+		\end{figure} 
+		
+		Druhým typem operací, které lze v aplikaci provádět, je generalizace budov. Po stisknutí tlačítka \textit{Building simplify} je možné provést čtyři následující metody pro výpočet hlavního směru orientace generalizované budovy.
+		
+		\begin{itemize}
+			\item Minimum Area Enclosing Rectangle 
+			\item Wall Avarage 
+			\item Longest Edge
+			\item Weighted Bisector 
+		\end{itemize}
+		
+		Výsledky jednotlivých metod zobrazují obrázky \ref{fig:app_MAER}, \ref{fig:app_WallAvarage}, \ref{fig:app_LongestEdge}, \ref{fig:app_WeightedBisector}.
+		\begin{figure}[htbh]
+			\centering
+			\includegraphics[scale=0.4]{images/U2_aplikace_MAER.png} 
+			\caption{Minimum Area Enclosing Rectangle}
+			\label{fig:app_MAER}
+		\end{figure} 
+		\begin{figure}[htbh]
+			\centering
+			\includegraphics[scale=0.4]{images/U2_aplikace_WallAvarage.png} 
+			\caption{Wall Avarage}
+			\label{fig:app_WallAvarage}
+		\end{figure} 
+		\begin{figure}[htbh]
+			\centering
+			\includegraphics[scale=0.4]{images/U2_aplikace_LongestEdge.png} 
+			\caption{Longest Edge}
+			\label{fig:app_LongestEdge}
+		\end{figure} \begin{figure}[htbh]
+			\centering
+			\includegraphics[scale=0.4]{images/U2_aplikace_WeightedBisector.png} 
+			\caption{Weighted Bisector}
+			\label{fig:app_WeightedBisector}
+		\end{figure} 
+		
+		\clearpage
+		
+		\section{Printscreen vytvořené aplikace}
+		\begin{figure}[htbh]
+			\centering
+			\includegraphics[scale=0.4]{images/U2_aplikace_uvodni_okno.jpg} 
+			\caption{Úvodní okno aplikace}
+			\label{fig:uvodni_okno}
+		\end{figure} 
 		
 		%----------------------------------------------------------------------------------------
 		%	DOKUMENTACE
 		%----------------------------------------------------------------------------------------
 		
 		\section{Dokumentace}
-
+		Kód zahrnuje 5 tříd – Algorithms, Draw, SortByX, SortByY a Widget, které budou následně detailněji popsány.      
+		
+		\subsection{Třída Algorithms}
+		Třída Algorithms obsahuje 4 funkce :  
+		
+		\begin{itemize}
+			\item double get2LinesAngle(QPoint \&p1, QPoint \&p2, QPoint \&p3, QPoint \&p4);
+			\item int getPointLinePosition(QPoint \&a, QPoint \&p1, QPoint \&p2);
+			\item double getPointLineDistance(QPointF \&a, QPointF \&p1, QPointF \&p2);
+			\item QPolygonF cHull (std::vector <QPointF> \&points);
+			\item QPolygonF qHull (std::vector <QPointF> \&points);
+			\item void qHullRecursive(int r, int s, std::vector<QPointF> \&points, QPolygonF \&ch);
+			\item std::vector <QPointF> rotate(std::vector <QPointF> \&points, double sigma);
+			\item std::tuple<std::vector<QPointF>, double> minMaxBox(std::vector <QPointF> \&points);
+			\item QPolygonF minAreaEnclosingRectangle(std::vector <QPointF> \&points);
+			\item QPolygonF wallAverage(std::vector <QPointF> \&points);
+			\item QPolygonF longestEdge(std::vector <QPointF> \&points);
+			\item QPolygonF weightedBisector(std::vector <QPointF> \&points);
+			\item double LH(std::vector <QPointF> \&points);
+			\item std::vector <QPointF> resizeRectangle(std::vector <QPointF> \&points, std::vector <QPointF> \&er);
+		\end{itemize}
+		
+		\paragraph{double get2LinesAngle(QPoint \&p1, QPoint \&p2, QPoint \&p3, QPoint \&p4);}
+		Počítá úhel mezi dvěma liniemi pomocí vztahu \ref{WN:omega_i}. Vstupními argumenty jsou body určující linie, tzn. vrcholy polygonu. Návratovou hodnotou funkce je double – desetinné číslo s velikostí úhlu mezi těmito přímkami.  
+		
+		\paragraph{int getPointLinePosition(QPoint \&a, QPoint \&p1, QPoint \&p2);}
+		Analyzuje vzájemnou polohu mezi bodem a linií polygonu, resp. v jaké polorovině vůči linii se bod nachází. Vstupními argumenty funkce jsou souřadnice určovaného bodu (jako QPoint) a souřadnice 2 bodů určujících polohu linie (vrcholy polygonu taktéž jako QPoint). Funkce vrací vždy hodnotu 1, 0 nebo -1 dle následujících pravidel:
+		
+		\begin{itemize}
+			\item 0 v případě, že bod leží v pravé polorovině,
+			\item 1 v případě, že  bod leží v levé polorovině,
+			\item -1 v případě, že bod leží na linii.
+		\end{itemize}
+		
+		\paragraph{double getPointLineDistance(QPointF \&a, QPointF \&p1, QPointF \&p2);}
+		Počítá vzdálenost mezi bodem a přímkou definovanou dvěma vrcholy polygonu. Vstupní hodnoty jsou 3 body datového typu QpointF. 
 		
 		\subsection{Třída Algorithms}
 		\paragraph{QPolygonF cHull (std::vector <QPointF> \&points)}\mbox{}\\
@@ -301,6 +408,99 @@
 		\paragraph{void qHullRecursive(int r, int s, std::vector<QPointF> \&points, QPolygonF \&ch)}\mbox{}\\
 		Funkce je rekurzivní funkcí k výše uvedené funkci qHull. Touto funkcí se přidávají části konvexní obálky $\mathcal{H_U}$ a $\mathcal{H_L}$ do výsledné konvexní obálky $\mathcal{H}$.
 	 	Vstupními argumenty jsou integery r a s, jež označují směr linie mezi pivoty \textit{$ q_1 $} a \textit{$ q_3 $}. Tyto body jsou uloženy ve vektoru \textit{points} (popsán níže) na prvních dvou místech, volá-li se tedy funkce například s těmito parametry: qHullRecursive(1,0,su,qh), bude počátečním bodem linie pivot \textit{$ q_3 $} a konečným bodem pivot \textit{$ q_1 $}. Třetím vstupním argumentem je vektor bodů \textit{QPointF} \textit{points}, do této proměnné se ukládá  $\mathcal{H_U}$ nebo $\mathcal{H_L}$. Posledním vstupním argumentem je \textit{QPolygonF}, do nějž se bude ukládat horní/spodní část konvexní obálky. Návratový typ funkce je void, funkce tedy nevrací žádnou proměnnou, pouze ukládá body do předem vytvořené proměnné.
+	 	
+	 	\paragraph{std::vector <QPointF> rotate(std::vector <QPointF> \&points, double sigma);}
+	 	Otáčí množinu bodů u úhel sigma. Vstupními hodnotami jsou vektor bodů datového typu QPointF a úhel sigma, která vstupuje do transformační rovnice. Funkce opět vrací vektor bodů datového typu QPointF.
+	 	
+	 	\paragraph{std::tuple<std::vector<QPointF>, double> minMaxBox(std::vector <QPointF> \&points);}
+	 	Vytváří kolem polygonu minimální ohraničující obdélník s vrcholy s extrémními souřadnicemi polygonu, nad kterým se obdélník vytváří. Vstupní hodnotou je vektor datového typu QPointF. Funkce vrací minimální ohraničující obdélník ve vektoru QPointF a jeho plochu s datovým typem double. Aby funkce mohla vracet dva objekty, je nutné je vracet jako tuple.
+	 	
+	 	\paragraph{QPolygonF minAreaEnclosingRectangle(std::vector <QPointF> \&points);}
+	 	Generalizuje polygon, jehož hlavní směr je určen metodou Minimum Area Enclosing Rectangle. Hlavní směr je zde určen stranou konvexní obálky, která minimalizuje plochu minimální  ohraničujícího obdélníku otočeného o její směrnici. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
+	 	
+	 	\paragraph{QPolygonF wallAverage(std::vector <QPointF> \&points);}
+	 	Generalizuje polygon, jehož hlavní směr je určen metodou Wall Avarage, kde je hlavní směr dán váženým průměrem, do kterého vstupují směrnice první strany polygonu, rezidua po dělení směrnic hodnotou $\pi/2$ a délka strany. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
+	 	
+	 	\paragraph{QPolygonF longestEdge(std::vector <QPointF> \&points);}
+	 	Generalizuje polygon, jehož hlavní směr je určen metodou Longest Edge. Hlavní směr je zde představován nejdelší stranou budovy. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
+	 	
+	 	\paragraph{QPolygonF weightedBisector(std::vector <QPointF> \&points);}
+	 	Generalizuje polygon, jehož hlavní směr je určen metodou Weighted Bisector, která hlavní směr určuje váženým průměrem směrů dvou nejdelších úhlopříček. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
+	 	
+	 	\paragraph{double LH(std::vector <QPointF> \&points);}
+	 	Počítá plochu budovy pomocí L'Hullierova vzorce. Vstupní hodnotou je vektor datového typu QPointF, výstupní hodnotou je plocha budovy typu double.
+	 	
+	 	\paragraph{std::vector <QPointF> resizeRectangle(std::vector <QPointF> \&points, std::vector <QPointF> \&er);}
+	 	Mění velikost generalizované budovy tak, aby se její plocha shodovala s plochou původní budovy. Vstupními hodnotami jsou vektor bodů datového typu QPointF představující původní budovu a vektor bodů datového typu QPointF představující generalizovanou budovu. Funkce vrací opět vektor bodů datového typu QPointF, který představuje generalizovanou budovu s plochou odpovídající původní budově.s
+	 	
+	 	
+	 	\subsection{Třída Draw}
+	 	Třída Draw obsahuje následující funkce, které budou dále podrobně popsány:
+	 	
+	 	\begin{itemize}
+	 		\item void paintEvent(QPaintEvent *event);
+	 		\item void clear();
+	 		\item QPoint getPoint(){return q;}
+	 		\item std::vector<QPolygonF> getPolygons()\{return buildings;\}
+	 		\item void setCh(std::vector <QPolygonF> \&ch\_\{chs = ch\_;\}
+	 		\item void setEr(std::vector <QPolygonF> \&er\_)\{ers = er\_;\}
+	 		\item void loadData(QString \&file\_name);
+	 	\end{itemize}
+	 	
+	 	a následující proměnné:
+	 	
+	 	\begin{itemize}
+	 		\item std::vector<QPointF> points;
+	 		\item std::vector <QPolygonF> ers, chs;
+	 		\item std::vector <QPolygonF> buildings;
+	 		\item QPointF p;
+	 		\item double y\_max = 0, x\_min = 999999999;
+	 		\item double y\_min = 999999999, x\_max = 0;
+	 	\end{itemize}
+	 	
+	 	\paragraph{•	void paintEvent(QPaintEvent *event);}\mbox{}\\
+	 	Funkce nastavuje grafické atributy vykreslovaných objektů a kreslí na plátno zadané polygony, jejich konvexní obálku a jejich generalizaci. 
+	 	
+	 	\paragraph{void clear();}\mbox{}\\
+	 	Funkce smaže veškeré objekty, jež jsou vykresleny na plátně. Funkce nemá vstupní argumenty. 
+	 	
+	 	\paragraph{std::vector<QPolygonF> getPolygons()\{return buildings;\}}
+	 	
+	 	Funkce vrací vektor polygonů načtených z textového souboru – návratový typ je std::vector<QPolygon>, funkce nemá vstupní argumenty.
+	 	
+	 	\paragraph{void setCh(std::vector <QPolygonF> \&ch\_\{chs = ch\_;\}}
+	 	
+	 	\paragraph{void setEr(std::vector <QPolygonF> \&er\_)\{ers = er\_;\}}
+	 	
+	 	\paragraph{void loadData(QString \&file\_name);}\mbox{}\\
+	 	Funkce načítá data z textového souboru a ukládá je do vektoru QPolygonF. Funkce také rovnou transformuje souřadnice s S-JTSK do souřadnicového systému plátna. Vstupní argumentem je cesta k souboru, jejž chceme načíst do aplikace.   
+	 	
+	 	\subsection{Třída SortByX}
+	 	Řadí body podle xové souřadnice.
+	 	
+	 	\subsection{Třída SortByY}
+	 	Řadí body podle y-ové souřadnice.
+	 	
+	 	\subsection{Třída Widget}
+	 	Třída Widget obsahuje 3 metody:
+	 	
+	 	\begin{itemize}
+	 		\item void on\_pushButtonClear\_clicked();
+	 		\item void on\_pushButtonSimplify\_clicked();
+	 		\item void on\_pushButtonLoadData\_clicked();
+	 		\item void on\_pushButtonConvexHull\_clicked();
+	 		
+	 	\end{itemize}
+	 	
+	 	\paragraph{ void on\_pushButtonClear\_clicked();}\mbox{}\\
+	 	Funkce se volá při stisknutí tlačítka Clear, volá funkci clear(), jež je definovaná v třídě Draw.
+	 	
+	 	\paragraph{ void on\_pushButtonAnalyze\_clicked();}\mbox{}\\
+	 	Funkce se volá při stisknutí tlačítka Building simplify a provádí jednotlivé metody generalizace budov na základně indexu v comboboxu. 
+	 	
+	 	\paragraph{void on\_pushButtonLoad\_clicked();}\mbox{}\\
+	 	Funkce slouží k inicializaci načítání souboru, spustí se po stisknutí tlačítka Load, čímž zobrazí dialog pro výběr souboru obsahujícího data, jež mají být načtena do aplikace. Po výběru souboru se zavolá funkce loadData ze třídy Draw, která přečte data ze souboru a uloží je do proměnné.
+	 	
 		
 		%----------------------------------------------------------------------------------------
 		%	ZÁVĚR
