@@ -463,12 +463,6 @@ QPolygonF Algorithms::weightedBisector(std::vector <QPointF> &points)
     sigma1 = atan2(dy1,dx1);
     sigma2 = atan2(dy2,dx2);
 
-    if (sigma1 > sigma2)
-    {
-        double pomoc = sigma1;
-        sigma1 = sigma2;
-        sigma2 = pomoc;
-    }
     sigma = (sigma1*u1_max + sigma2*u2_max)/(u1_max+u2_max);
 
     //Rotate by -sigma
