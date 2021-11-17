@@ -17,7 +17,8 @@
 \contentsline {subsubsection}{\numberline {5.1.2}Měřítko}{8}{}%
 \contentsline {subsubsection}{\numberline {5.1.3}Transformace souřadnic}{9}{}%
 \contentsline {subsection}{\numberline {5.2}Načítání souřadnic s reálným číslem}{10}{}%
-\contentsline {section}{\numberline {6}Vstupní data}{11}{}%
+\contentsline {subsection}{\numberline {5.3}Špatné výsledky generalizace metodou Weighted Bisector}{10}{}%
+\contentsline {section}{\numberline {6}Vstupní data}{10}{}%
 \contentsline {section}{\numberline {7}Výstupní data}{12}{}%
 \contentsline {section}{\numberline {8}Printscreen vytvořené aplikace}{15}{}%
 \contentsline {section}{\numberline {9}Dokumentace}{15}{}%

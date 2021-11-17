@@ -9,6 +9,8 @@
 \usepackage{graphicx}  % Graphics
 \usepackage{amsmath}
 \usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{array}
 
 \begin{document}
 	
@@ -285,7 +287,7 @@
 	\begin{figure}[htbh]
 		\centering
 		\includegraphics[scale=0.8]{images/U2_problem_meritko1.png} 
-		\caption{Výpočet Ymin a Xmax}
+		\caption{Výpočet $ Y_{min} $ a $ X_{max} $}
 		\label{fig:problem_scale1}
 	\end{figure} 
 	
@@ -319,8 +321,9 @@
 	\subsection{Načítání souřadnic s reálným číslem}
 	V průběhu práce jsme narazili na problém, kdy ačkoliv jsme souřadnice přetypovali ze stringu na double, stále se nám načítaly souřadnice typu integer. Zaokrouhlení souřadnic na metry následně vedlo k viditelné destrukci načtených polygonů. Problém byl v tom, že souřadnice QPointu jsou definovány typem integer. Proto byly všechny objekty datového typu QPoint nahrazeny typem QpointF, jehož souřadnice jsou typu float.
 	
-	
-	\clearpage
+	\subsection{Špatné výsledky generalizace metodou Weighted Bisector}
+	Po původním výpočtu generalizace metodou Weighted Bisector byly některé hlavní směry budov špatně vypočteny. Po kontrole bylo zjištěno, že chyba nebyla v metodě výpočtu, nýbrž ve vstupních datech. Některé budovy měly příliš mnoho vrcholů vzdálených od sebe jen několik jednotek až desítek centimetrů. V případě, že tento stav nastal poblíž nejdelší úhlopříčky, stávalo se tedy, že byly obě vypočtené úhlopříčky téměř identické. a budova se potom natočila do špatného směru. Problém byl vyřešen smazáním nadbytečných bodů ze vstupních dat. 
+
 	
 	%----------------------------------------------------------------------------------------
 	%	VSTUPNÍ DATA
@@ -370,32 +373,32 @@
 	
 	\begin{itemize}
 		\item Minimum Area Enclosing Rectangle 
-		\item Wall Avarage 
+		\item Wall Average 
 		\item Longest Edge
 		\item Weighted Bisector 
 	\end{itemize}
 	
-	Výsledky jednotlivých metod zobrazují obrázky \ref{fig:app_MAER}, \ref{fig:app_WallAvarage}, \ref{fig:app_LongestEdge}, \ref{fig:app_WeightedBisector}.
+	Výsledky jednotlivých metod zobrazují obrázky \ref{fig:app_MAER}, \ref{fig:app_WallAverage}, \ref{fig:app_LongestEdge}, \ref{fig:app_WeightedBisector}.
 	\begin{figure}[htbh]
 		\centering
-		\includegraphics[scale=0.4]{images/U2_aplikace_MAER.png} 
+		\includegraphics[scale=0.39]{images/U2_aplikace_MAER2.png} 
 		\caption{Minimum Area Enclosing Rectangle}
 		\label{fig:app_MAER}
 	\end{figure} 
 	\begin{figure}[htbh]
 		\centering
-		\includegraphics[scale=0.4]{images/U2_aplikace_WallAvarage.png} 
-		\caption{Wall Avarage}
-		\label{fig:app_WallAvarage}
+		\includegraphics[scale=0.39]{images/U2_aplikace_WallAvarage2.png} 
+		\caption{Wall Average}
+		\label{fig:app_WallAverage}
 	\end{figure} 
 	\begin{figure}[htbh]
 		\centering
-		\includegraphics[scale=0.4]{images/U2_aplikace_LongestEdge.png} 
+		\includegraphics[scale=0.39]{images/U2_aplikace_LongestEdge2.png} 
 		\caption{Longest Edge}
 		\label{fig:app_LongestEdge}
 	\end{figure} \begin{figure}[htbh]
 		\centering
-		\includegraphics[scale=0.4]{images/U2_aplikace_WeightedBisector.png} 
+		\includegraphics[scale=0.39]{images/U2_aplikace_WeightedBisector2.png} 
 		\caption{Weighted Bisector}
 		\label{fig:app_WeightedBisector}
 	\end{figure} 
@@ -472,7 +475,7 @@
  	Generalizuje polygon, jehož hlavní směr je určen metodou Minimum Area Enclosing Rectangle. Hlavní směr je zde určen stranou konvexní obálky, která minimalizuje plochu minimálního ohraničujícího obdélníku otočeného o její směrnici. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
  	
  	\paragraph{QPolygonF wallAverage(std::vector <QPointF> \&points);}
- 	Generalizuje polygon, jehož hlavní směr je určen metodou Wall Avarage, kde je hlavní směr dán váženým průměrem, do kterého vstupují směrnice první strany polygonu, rezidua po dělení směrnic hodnotou $\pi/2$ a délka strany. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
+ 	Generalizuje polygon, jehož hlavní směr je určen metodou Wall Average, kde je hlavní směr dán váženým průměrem, do kterého vstupují směrnice první strany polygonu, rezidua po dělení směrnic hodnotou $\pi/2$ a délka strany. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
  	
  	\paragraph{QPolygonF longestEdge(std::vector <QPointF> \&points);}
  	Generalizuje polygon, jehož hlavní směr je určen metodou Longest Edge. Hlavní směr je zde představován nejdelší stranou budovy. Do funkce vstupuje vektor datového typu QPointF a algoritmus vrací natočený obdélník, který je uložen v datovém typu QPolygonF.
@@ -564,18 +567,36 @@
 	
 	\section{Závěr}
 
-	Vytvořená aplikace obsahuje čtyři tlačítka a plátno. Tlačítkem \textit{Load Data} se načítají polygony budov, které jsou po souřadnicích v systému S-JTSK uloženy ve špagetovém modelu v textovém souboru. Tlačítkem \textit{Building Simplify} lze polygony budov generalizovat jednou ze čtyř popsaných metod, tj. Minimum Area Enclosing Rectangle, Wall Avarage, Longest Edge a Weighted Bisector. Po stisknutí tlačítka \textit{Create convex hull} se kolem jednotlivých polygonů vytvoří konvexní obálky vytvořené metodou Jarvis Scan či metodou Quick Hull. Tlačítkem \textit{Clear} se pak plátno vyčistí. Jednotlivé algoritmy byly popsány v kapitole 3.
+	Vytvořená aplikace obsahuje čtyři tlačítka a plátno. Tlačítkem \textit{Load Data} se načítají polygony budov, které jsou po souřadnicích v systému S-JTSK uloženy ve špagetovém modelu v textovém souboru. Tlačítkem \textit{Building Simplify} lze polygony budov generalizovat jednou ze čtyř popsaných metod, tj. Minimum Area Enclosing Rectangle, Wall Average, Longest Edge a Weighted Bisector. Po stisknutí tlačítka \textit{Create convex hull} se kolem jednotlivých polygonů vytvoří konvexní obálky vytvořené metodou Jarvis Scan či metodou Quick Hull. Tlačítkem \textit{Clear} se pak plátno vyčistí. Jednotlivé algoritmy byly popsány v kapitole 3.
 	
-	Algoritmy pro výpočet konvexní obálky vykazují shodné výsledky. Metody pro výpočet hlavního směru generalizované budovy se však ve výsledku liší.
+	Algoritmy pro výpočet konvexní obálky vykazují shodné výsledky. Metody pro výpočet hlavního směru generalizované budovy se však ve výsledcích liší.
 	Největší rozdíl při geneneralizování metodami Minimum Enclosing Area a Wall Average byl shledán u objektů s tupými úhly a u objektů s velkým množstvím výběžků.
 	
-	Metody Minimum Area Enclosing Rectangle a Longest Edge dávají na našich datech poměrně shodné výsledky. Výjimkou je však budova s největší plochou ve tvaru Z. Každá strana budovy je zcela jinak orientovaná a nelze na první pohled snadno určit, která hrana je nejdelší. A jelikož se nejdelší strana budovy neshoduje s nejdelší stranou generalizované budovy, zdá se, že generalizace nemá vhodnou orientaci.
+	Metoda Longest Edge dává na našich datech poměrně kvalitní výsledky velmi podobné výsledkům metody Minimum Enclosing Area. Výjimkou je však budova s největší plochou ve tvaru Z. Každá strana budovy je zcela jinak orientovaná a nelze na první pohled snadno určit, která hrana je nejdelší. A jelikož se nejdelší strana budovy neshoduje s nejdelší stranou generalizované budovy, zdá se, že hlavní směr nebyl vhodně určen.
 	
-	Budovy generalizované metodou Weighted Bisector jsou často znatelně natočené oproti původním polygonům i oproti výsledkům zbylých třech generalizačních algoritmů. Je tedy možné, že algoritmus nebyl správně implementován.
+	Budovy generalizované metodou Weighted Bisector jsou často znatelně natočené oproti původním polygonům i oproti výsledkům zbylých třech generalizačních algoritmů. Velký vliv na špatné natočení výsledného polygonu má množství výstupků, jež mohou ovlivnit hledání nejdelší úhlopříčky budovy. Pro testovací data se tato metoda jeví jako nejméně vhodná.
 	
-	Na ukázkových datech by pravděpodobně byla nejlepší volbou metoda Minimum Area Enclosing Box. 
+	Na ukázkových datech by pravděpodobně byla nejlepší volbou metoda Minimum Area Enclosing Box, jež dle našeho úsudku generalizovala všechny naše testovací polygony poměrně kvalitně. 
 	
+	V následující tabulce je vizualizován přehled výsledků generalizace pomocí jednotlivých metod.\newline
 
+
+\begin{tabular}{|m{2.5cm}|m{2.5cm}|m{2.5cm}|m{2.5cm}|}
+	\hline
+	název metody & počet správně generalizovaných budov & počet špatně generalizovaných budov & procentuální úspěšnost metody na testovaných datech \\ 
+	\hline
+	Minimum \mbox{Enlosing} Rectangle & 15 & 0 & 100 \% \\
+	\hline
+	Wall Average & 14 & 1 & 93,3 \% \\ 
+	\hline
+	Longest Edge & 14 & 1 & 93,3 \% \\ 
+	\hline
+	Weigthed \mbox{Bisector} & 11 & 4 & 73,3 \% \\ 
+	\hline
+\end{tabular}
+
+
+\clearpage
 
 		
 	\end{document}

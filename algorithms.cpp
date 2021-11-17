@@ -449,13 +449,26 @@ QPolygonF Algorithms::weightedBisector(std::vector <QPointF> &points)
                 dx1 = dxi;
                 dy1 = dyi;
             }
+
+            else if ((lengthi > u2_max) && (lengthi < u1_max))
+            {
+                u2_max = lengthi;
+                dx2 = dxi;
+                dy2 = dyi;
+            }
         }
     }
 
-    std::cout<< "dx1: " << dx1 << ", dx2: " << dx2 << ", dy1: " << dy1 << ", dy2: " << dy2 << std::endl;
     //Compute direction by weighted avarage
     sigma1 = atan2(dy1,dx1);
     sigma2 = atan2(dy2,dx2);
+
+    if (sigma1 > sigma2)
+    {
+        double pomoc = sigma1;
+        sigma1 = sigma2;
+        sigma2 = pomoc;
+    }
     sigma = (sigma1*u1_max + sigma2*u2_max)/(u1_max+u2_max);
 
     //Rotate by -sigma

@@ -94,8 +94,8 @@ void Widget::on_pushButtonSimplify_clicked()
             {
                 points.push_back(pol[j]);
             }
-
             QPolygonF er = a.weightedBisector(points);
+
             ers.push_back(er);
 
         }
@@ -110,7 +110,6 @@ void Widget::on_pushButtonSimplify_clicked()
 void Widget::on_pushButtonLoadData_clicked()
 {
     //Open text file with dialog
-    //QString file_name = "D:/Github/ADK/ADKI_uloha1/polygon_JTSK.txt";
     QString file_name = QFileDialog::getOpenFileName(this, tr("Open Text file"), "", tr("Text Files (*.txt)"));
     ui->Canvas->loadData(file_name);
     repaint();
